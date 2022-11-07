@@ -1,0 +1,32 @@
+.card {
+  width: 8rem;
+  height: 5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.card-item {
+  margin-top: -2.2rem;
+  margin-bottom: 8px;
+  padding: 0.3rem;
+  border-radius: 100px;
+}
+
+.leave-btn{
+    background-color: gray !important;
+}
+
+.select-box{
+  height: 2.2rem;
+    align-items: center;
+    margin-top: 1.7rem;
+    width: 42%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    cursor:pointer;
+}
