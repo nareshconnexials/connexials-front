@@ -12,17 +12,21 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import PageTitle from "../components/Typography/PageTitle";
-import { getUserProfileData, usersSelector } from "../redux/slices/Users/usersSlice";
+import {
+  getUserProfileData,
+  usersSelector,
+} from "../redux/slices/Users/usersSlice";
 
 const Profile = () => {
   const { id } = useParams();
-  const {profile} = useSelector(usersSelector)
-  const dispatch =useDispatch();
+  const { profile } = useSelector(usersSelector);
+  const dispatch = useDispatch();
   useEffect(() => {
     if (id) {
       dispatch(getUserProfileData(id));
     }
   }, [id, dispatch]);
+
   return (
     <>
       <PageTitle>Profile</PageTitle>
@@ -39,13 +43,12 @@ const Profile = () => {
             <TableRow>
               <TableCell>
                 <div className="flex items-center text-sm">
-                  <Avatar
-                    className="hidden mr-3 md:block"
-                    src={""}
-                    alt=""
-                  />
+                  <Avatar className="hidden mr-3 md:block" src={""} alt="" />
                   <div>
-                    <p className="font-semibold"><span>{profile.firstName}</span> <span>{profile.lastName}</span></p>
+                    <p className="font-semibold">
+                      <span>{profile.firstName}</span>{" "}
+                      <span>{profile.lastName}</span>
+                    </p>
                   </div>
                 </div>
               </TableCell>
@@ -55,7 +58,7 @@ const Profile = () => {
               <TableCell>
                 <Badge type={"primary"}>{profile.role}</Badge>
               </TableCell>
-              
+
               {/* <TableCell>
                 <span className="text-sm">
                   {new Date("user.date").toLocaleDateString()}

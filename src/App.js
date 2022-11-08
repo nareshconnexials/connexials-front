@@ -1,10 +1,15 @@
 import React from "react";
+import { ThemeProvider } from "./context/ThemeContext";
 import MainRoutes from "./routes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
-      <MainRoutes />
+      <ThemeProvider>
+        <ToastContainer />
+        <MainRoutes />
+      </ThemeProvider>
     </>
   );
 }

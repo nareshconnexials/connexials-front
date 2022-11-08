@@ -20,13 +20,14 @@ const Payslip = lazy(() => import("../pages/Payslip"));
 const Leave = lazy(() => import("../pages/Leave"));
 const Profile = lazy(() => import("../pages/Profile"));
 const Settings = lazy(() => import("../pages/Settings"));
+const Page404 = lazy(() => import("../pages/404"));
 
 export const routes = [
   {
     path: "/",
     component: Dashboard,
     protected: true,
-    role: ["admin"],
+    role: ["admin", "employee"],
   },
   {
     path: "/login",
@@ -38,13 +39,13 @@ export const routes = [
     path: "/signup",
     component: SignUp,
     protected: false,
-    role: ["employee"],
+    role: ["admin", "employee"],
   },
   {
     path: "/forgot-password",
     component: ForgotPassword,
     protected: false,
-    role: ["employee"],
+    role: ["admin", "employee"],
   },
   {
     path: "/dashboard",
@@ -74,7 +75,7 @@ export const routes = [
     path: "/add-account",
     component: AddAccount,
     protected: true,
-    role: { admin: "admin" },
+    role: ["admin"],
   },
   {
     path: "/leave",
@@ -94,9 +95,14 @@ export const routes = [
     protected: true,
     role: ["admin", "employee"],
   },
+  {
+    name: "Not Found",
+    path: "*",
+    component: Page404,
+    protected: true,
+    role: ["admin", "employee"],
+  },
 ];
-
-const isRole = getRole("role");
 
 function PrivateRoute({ children, route }) {
   const isAuthenticated = getToken("token");
@@ -113,12 +119,14 @@ function PublicRoutes({ children, route: { path } }) {
 }
 
 export default function MainRoutes() {
+  const role = "admin";
   return (
     <Router>
       <Suspense fallback={<ThemedSuspense />}>
         <Routes>
-          {routes.map((route) => (
-            <Route path="/" key={isRole}>
+          {routes
+            .filter((route) => route.role.includes(role))
+            .map((route) => (
               <Route
                 key={route.path}
                 path={route.path}
@@ -134,8 +142,7 @@ export default function MainRoutes() {
                   )
                 }
               />
-            </Route>
-          ))}
+            ))}
         </Routes>
       </Suspense>
     </Router>

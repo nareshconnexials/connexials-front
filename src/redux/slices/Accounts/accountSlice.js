@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import {
   clearRole,
   clearToken,
@@ -25,14 +26,40 @@ export const accountsSlice = createSlice({
       state.loading = true;
       state.hasErrors = { error: false, detail: "" };
     },
-    getAccountSuccess: (state, { payload }) => {
+    getAccountSuccess: (state, { payload }, message) => {
       state.accounts = payload;
       state.loading = false;
       state.hasErrors = { error: false, detail: "" };
+      if (state.hasErrors.error === false) {
+        toast("Account Login", {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "success",
+        });
+      }
     },
-    getAccountFailure: (state, { payload }) => {
+    getAccountFailure: (state, message) => {
       state.loading = false;
-      state.hasErrors = payload;
+      state.hasErrors = { error: true, detail: "" };
+      if (state.hasErrors.error === true) {
+        toast(message, {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "error",
+        });
+      }
     },
   },
 });
@@ -58,14 +85,16 @@ export const signUpUser = (data, callback) => async (dispatch) => {
     );
 
     if (response.data.msg === "success") {
-      dispatch(getAccountSuccess(response.data));
+      console.log(response.data);
+      const message = "Account Created";
+      dispatch(getAccountSuccess(response.data, message));
+      if (callback) callback();
     }
-
-    if (callback) callback();
   } catch (error) {
-    dispatch(
-      getAccountFailure({ error: true, detail: error.response.data.msg })
-    );
+    if (error.response.status === 401) {
+      const message = "Signup error";
+      dispatch(getAccountFailure(message));
+    }
   }
 };
 
@@ -76,27 +105,27 @@ export const loginUser = (data, callback) => async (dispatch) => {
       "users/sessions",
       formatLoginApiData(data)
     );
-    const role = ["admin", "employee"]
+
     if (response.data.msg === "success") {
+      const message = "Account Login";
       setToken(response.data.token);
       setUserId(response.data.user_id);
-
-      // if(role.includes("employee")){
-      //   setRole("admin");
-      // }else{
-        // }
+      if (response.data.role === "admin") {
         setRole("admin");
-
-      dispatch(getAccountSuccess(response.data));
+      } else {
+        setRole("employee");
+      }
+      dispatch(getAccountSuccess(response.data, message));
       if (callback) callback();
     }
   } catch (error) {
-    if (error.response.status === 401) {
-      console.log(error);
-      dispatch(
-        getAccountFailure({ error: true, detail: error.response.data.msg })
-      );
+    // if (error.response.status === 401) {
+    const message = "Login error";
+    console.log(error.response.data);
+    if (error.response.data.msg === "unauthorized request") {
+      dispatch(getAccountFailure(message));
     }
+    // }
   }
 };
 
@@ -107,7 +136,7 @@ export const logOutUser = (callback) => async (dispatch) => {
     clearRole("role");
     if (callback) callback();
   } catch (error) {
-    dispatch(getAccountFailure());
+    dispatch(getAccountFailure(""));
   }
 };
 

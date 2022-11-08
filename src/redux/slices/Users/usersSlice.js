@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getRole } from "../../../helpers/Utils";
 import axios from "../../axios";
 import { formatProfileApiData } from "./formatFunction";
 
@@ -6,9 +7,14 @@ export const usersSlice = createSlice({
   name: "users",
   initialState: {
     loading: false,
-    hasErrors: { error: false, detail: "" }, 
-    usersData:[],
-    profile:{}
+    hasErrors: { error: false, detail: "" },
+    usersData: [],
+    profile: {
+      id:"",
+      firstName:"",
+      lastName:"",
+      role:""
+    },
   },
   reducers: {
     startLoading: (state) => {
@@ -21,18 +27,18 @@ export const usersSlice = createSlice({
     getUsersSuccess: (state, { payload }) => {
       state.usersData = payload;
       state.loading = false;
-      state.hasErrors = false
+      state.hasErrors = false;
     },
     getUsersFailure: (state, { payload }) => {
       state.loading = false;
       state.hasErrors = payload || { error: true, detail: "" };
-    }, 
-    getUserProfileSuccess: (state, {payload}) => {
+    },
+    getUserProfileSuccess: (state, { payload }) => {
       state.profile = payload;
       state.loading = false;
-      state.hasErrors = false
+      state.hasErrors = false;
     },
-    getUserProfileFailure: (state, {payload}) => {
+    getUserProfileFailure: (state, { payload }) => {
       state.loading = false;
       state.hasErrors = payload || { error: true, detail: "" };
     },
@@ -45,25 +51,25 @@ export const {
   getUsersSuccess,
   getUsersFailure,
   getUserProfileSuccess,
-  getUserProfileFailure
+  getUserProfileFailure,
 } = usersSlice.actions;
 
 export const usersSelector = (state) => state.users;
 
-export default usersSlice.reducer; 
+export default usersSlice.reducer;
 
 export const getUsersData = () => async (dispatch) => {
   try {
     dispatch(startLoading());
-
-    const response = await axios.get('users/list');
-
-    dispatch(getUsersSuccess(response.data));
+    const isRole = getRole("role");
+    if (isRole === "admin") {
+      const response = await axios.get("users/list");
+      dispatch(getUsersSuccess(response.data));
+    }
   } catch (error) {
     dispatch(getUsersFailure());
   }
 };
-
 
 export const getUserProfileData = (userId) => async (dispatch) => {
   try {
@@ -76,4 +82,3 @@ export const getUserProfileData = (userId) => async (dispatch) => {
     dispatch(getUserProfileFailure());
   }
 };
-

@@ -16,17 +16,26 @@
   border-radius: 100px;
 }
 
-.leave-btn{
-    background-color: gray !important;
+.leave-btn {
+  background-color: gray !important;
 }
 
-.select-box{
+.select-box {
   height: 2.2rem;
-    align-items: center;
-    margin-top: 1.7rem;
-    width: 42%;
-    background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    cursor:pointer;
+  align-items: center;
+  margin-top: .35rem;
+  width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.label{
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+.btn{
+  margin-right: 2rem;
 }

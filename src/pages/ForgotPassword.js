@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import ImageLight from '../assets/img/forgot-password-office.jpeg'
-import ImageDark from '../assets/img/forgot-password-office-dark.jpeg'
-import { Label, Input, Button } from '@windmill/react-ui'
+import ImageLight from "../assets/img/forgot-password-office.jpeg";
+import ImageDark from "../assets/img/forgot-password-office-dark.jpeg";
+import { Label, Input, Button } from "@windmill/react-ui";
 
 function ForgotPassword() {
   return (
@@ -24,7 +24,7 @@ function ForgotPassword() {
               alt="Office"
             />
           </div>
-          <main className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
+          <main className="flex  flex-col items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div className="w-full">
               <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Forgot password
@@ -39,11 +39,19 @@ function ForgotPassword() {
                 Recover password
               </Button>
             </div>
+            <p className="mt-4">
+              <Link
+                className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
+                to="/login"
+              >
+                Already have an account? Login
+              </Link>
+            </p>
           </main>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ForgotPassword
+export default ForgotPassword;
