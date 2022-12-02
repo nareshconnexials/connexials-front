@@ -1,18 +1,23 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Main from "./Main";
-import { SidebarContext } from "../context/SidebarContext";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  closeSidebar,
+  sidebarSelector,
+} from "../redux/slices/Sidebar/sidebarSlice";
 
-function Layout({ children, role}) {
-  const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
+function Layout({ children }) {
+  const { isSidebarOpen } = useSelector(sidebarSelector);
   let location = useLocation();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    closeSidebar();
-  }, [location]);
+    dispatch(closeSidebar());
+  }, [location, dispatch]);
 
   return (
     <div

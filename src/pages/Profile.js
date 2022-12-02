@@ -56,14 +56,10 @@ const Profile = () => {
                 <span className="text-sm">{profile.email}</span>
               </TableCell>
               <TableCell>
-                <Badge type={"primary"}>{profile.role}</Badge>
+                <Badge type={profile.role === "admin" ? "primary" : "success"}>
+                  {profile.role}
+                </Badge>
               </TableCell>
-
-              {/* <TableCell>
-                <span className="text-sm">
-                  {new Date("user.date").toLocaleDateString()}
-                </span>
-              </TableCell> */}
             </TableRow>
           </TableBody>
         </Table>

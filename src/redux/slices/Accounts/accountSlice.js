@@ -26,40 +26,14 @@ export const accountsSlice = createSlice({
       state.loading = true;
       state.hasErrors = { error: false, detail: "" };
     },
-    getAccountSuccess: (state, { payload }, message) => {
+    getAccountSuccess: (state, { payload }) => {
       state.accounts = payload;
       state.loading = false;
       state.hasErrors = { error: false, detail: "" };
-      if (state.hasErrors.error === false) {
-        toast("Account Login", {
-          position: "top-right",
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          type: "success",
-        });
-      }
     },
-    getAccountFailure: (state, message) => {
+    getAccountFailure: (state) => {
       state.loading = false;
       state.hasErrors = { error: true, detail: "" };
-      if (state.hasErrors.error === true) {
-        toast(message, {
-          position: "top-right",
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          type: "error",
-        });
-      }
     },
   },
 });
@@ -84,16 +58,37 @@ export const signUpUser = (data, callback) => async (dispatch) => {
       formatSignUpApiData(data)
     );
 
-    if (response.data.msg === "success") {
-      console.log(response.data);
+    if (response.data.message === "Account created successfully") {
       const message = "Account Created";
-      dispatch(getAccountSuccess(response.data, message));
+      dispatch(getAccountSuccess(response.data));
+      toast(message, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "success",
+      });
       if (callback) callback();
     }
   } catch (error) {
-    if (error.response.status === 401) {
-      const message = "Signup error";
-      dispatch(getAccountFailure(message));
+    if (error.response.data.error === "record not unique") {
+      const message2 = "User already exist";
+      toast(message2, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "error",
+      });
+      dispatch(getAccountFailure());
     }
   }
 };
@@ -110,22 +105,64 @@ export const loginUser = (data, callback) => async (dispatch) => {
       const message = "Account Login";
       setToken(response.data.token);
       setUserId(response.data.user_id);
+
+      var segments = response.data.token.split(".");
+      if (segments.length !== 3) {
+        console.log(segments.length);
+        throw new Error("Not enough or too many segments");
+      }
       if (response.data.role === "admin") {
         setRole("admin");
       } else {
         setRole("employee");
       }
-      dispatch(getAccountSuccess(response.data, message));
+      toast(message, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "success",
+      });
+      dispatch(getAccountSuccess(response.data));
       if (callback) callback();
     }
   } catch (error) {
-    // if (error.response.status === 401) {
-    const message = "Login error";
-    console.log(error.response.data);
-    if (error.response.data.msg === "unauthorized request") {
-      dispatch(getAccountFailure(message));
+    if (error.response.status === 401) {
+      const message = "Login error";
+      if (error.response.data.msg === "unauthorized request") {
+        toast(message, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "error",
+        });
+        dispatch(getAccountFailure());
+      }
+      if (error.response.data.msg === "email/password is wrong") {
+        const message = "email/password is wrong";
+        toast(message, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "warning",
+        });
+        dispatch(getAccountFailure());
+      }
     }
-    // }
   }
 };
 

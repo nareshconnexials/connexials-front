@@ -6,7 +6,6 @@ const config = {
   baseURL: apiURL,
   headers: {
     Authorization: `Bearer ${getToken()}`,
-    "Content-Type": "application/json",
   },
 };
 

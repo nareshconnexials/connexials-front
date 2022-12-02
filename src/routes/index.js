@@ -21,6 +21,10 @@ const Leave = lazy(() => import("../pages/Leave"));
 const Profile = lazy(() => import("../pages/Profile"));
 const Settings = lazy(() => import("../pages/Settings"));
 const Page404 = lazy(() => import("../pages/404"));
+const UserLeave = lazy(() => import("../pages/UserLeave"));
+const ApplyStatus = lazy(() => import("../pages/ApplyStatus"));
+const StatusUpdate = lazy(() => import("../pages/StatusUpdate"));
+const Attendance = lazy(() => import("../pages/Attendance"));
 
 export const routes = [
   {
@@ -66,6 +70,18 @@ export const routes = [
     role: ["admin", "employee"],
   },
   {
+    path: "/apply-status",
+    component: ApplyStatus,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/status/update/:id",
+    component: StatusUpdate,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
     path: "/payslip",
     component: Payslip,
     protected: true,
@@ -78,8 +94,20 @@ export const routes = [
     role: ["admin"],
   },
   {
-    path: "/leave",
+    path: "/leaves",
     component: Leave,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/leaves/user/:id",
+    component: UserLeave,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/attendance",
+    component: Attendance,
     protected: true,
     role: ["admin", "employee"],
   },

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SidebarContext } from "../context/SidebarContext";
 import {
   MoonIcon,
   SunIcon,
@@ -18,13 +17,17 @@ import {
 } from "@windmill/react-ui";
 import { getUserId } from "../helpers/Utils";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../redux/slices/Accounts/accountSlice";
 import { getUsersData } from "../redux/slices/Users/usersSlice";
+import {
+  sidebarSelector,
+  toggleSidebar,
+} from "../redux/slices/Sidebar/sidebarSlice";
 
 function Header() {
   const { mode, toggleMode } = useContext(WindmillContext);
-  const { toggleSidebar } = useContext(SidebarContext);
+  const { isSidebarOpen } = useSelector(sidebarSelector);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -52,13 +55,21 @@ function Header() {
     navigate("/login");
   };
 
+  const handleToggleSidebar = () => {
+    if (isSidebarOpen === false) {
+      dispatch(toggleSidebar(true));
+    } else {
+      dispatch(toggleSidebar(false));
+    }
+  };
+
   return (
     <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
       <div className="container flex items-center justify-between lg:justify-end h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
         {/* <!-- Mobile hamburger --> */}
         <button
           className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
-          onClick={toggleSidebar}
+          onClick={handleToggleSidebar}
           aria-label="Menu"
         >
           <MenuIcon className="w-6 h-6" aria-hidden="true" />

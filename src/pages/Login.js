@@ -21,8 +21,6 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { hasErrors } = useSelector(accountsSelector);
-
   const formik = useFormik({
     initialValues: loginDetails,
     validationSchema: loginAccountSchema,
@@ -34,7 +32,6 @@ function Login() {
 
   const handleSubmit = (values) => {
     dispatch(loginUser(values, closeLoginPage));
-    console.log(hasErrors.error);
   };
 
   const closeLoginPage = () => {

@@ -1,11 +1,9 @@
 import React from "react";
-import ImageLight from "../assets/img/create-account-office.jpeg";
-import ImageDark from "../assets/img/create-account-office-dark.jpeg";
 import { Input, Label, Button } from "@windmill/react-ui";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { createAccountSchema } from "../redux/validation/accountValidation";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signUpUser } from "../redux/slices/Accounts/accountSlice";
 import { getRole } from "../helpers/Utils";
 
@@ -39,23 +37,9 @@ function AddAccount() {
   return (
     <>
       {isRole === "admin" && (
-        <div className="flex items-center p-6  my-[5rem] bg-gray-50 dark:bg-gray-900">
+        <div className="create-account-container flex items-center p-6  my-[5rem] bg-gray-50 dark:bg-gray-900">
           <div className="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-2xl dark:bg-gray-800">
             <div className="flex flex-col items-center w-full overflow-y-auto">
-              {/* <div className="h-32 md:h-auto md:w-1/2">
-            <img
-              aria-hidden="true"
-              className="object-cover w-full h-full dark:hidden"
-              src={ImageLight}
-              alt="Office"
-            />
-            <img
-              aria-hidden="true"
-              className="hidden object-cover w-full h-full dark:block"
-              src={ImageDark}
-              alt="Office"
-            />
-          </div> */}
               <main className="flex items-center h-full my-[7rem] justify-center p-6 sm:p-12">
                 <div className="w-full">
                   <form method="POST" onSubmit={formik.handleSubmit}>
@@ -142,15 +126,6 @@ function AddAccount() {
                     </Button>
                   </form>
                   <hr className="my-8" />
-
-                  {/* <p className="mt-4">
-                <Link
-                  className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  to="/login"
-                >
-                Already have an account? Login
-                </Link>
-              </p> */}
                 </div>
               </main>
             </div>

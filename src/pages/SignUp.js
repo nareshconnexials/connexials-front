@@ -2,12 +2,11 @@ import React from "react";
 import ImageLight from "../assets/img/create-account-office.jpeg";
 import ImageDark from "../assets/img/create-account-office-dark.jpeg";
 import { Input, Label, Button } from "@windmill/react-ui";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { createAccountSchema } from "../redux/validation/accountValidation";
 import { useNavigate, Link } from "react-router-dom";
 import {
-  accountsSelector,
   signUpUser,
 } from "../redux/slices/Accounts/accountSlice";
 
@@ -21,7 +20,6 @@ function SignUp() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { accounts, hasErrors } = useSelector(accountsSelector);
 
   const formik = useFormik({
     initialValues: signUpDetails,

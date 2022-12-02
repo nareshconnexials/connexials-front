@@ -1,0 +1,24 @@
+.pdf-table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.pdf-td,
+.pdf-th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
+}
+
+.pdf-th-bold {
+  font-weight: 100;
+}
+
+.th-bold {
+  font-weight: bold;
+}
+.pdf-td-font-text {
+  text-align: center;
+  font-weight: 500;
+}

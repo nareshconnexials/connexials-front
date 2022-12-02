@@ -22,7 +22,11 @@ import {
 } from "@windmill/react-ui";
 import Profile from "../pages/Profile";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsersData,getUserProfileData, usersSelector } from "../redux/slices/Users/usersSlice";
+import {
+  getUsersData,
+  getUserProfileData,
+  usersSelector,
+} from "../redux/slices/Users/usersSlice";
 import { getRole, getUserId } from "../helpers/Utils";
 
 function Dashboard() {
@@ -30,7 +34,7 @@ function Dashboard() {
   const [data, setData] = useState([]);
   const { profile, usersData } = useSelector(usersSelector);
   const dispatch = useDispatch();
-  const userId = getUserId()
+  const userId = getUserId();
   const isRole = getRole("role");
 
   useEffect(() => {
@@ -59,48 +63,49 @@ function Dashboard() {
     <>
       {isRole === "admin" && (
         <>
-          <PageTitle>Dashboard</PageTitle>
+          <div className="admin-dashboard">
+            <PageTitle>Dashboard</PageTitle>
 
-          {/* <!-- Cards --> */}
-          <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-            <InfoCard title="Total Users" value={usersData.length}>
-              <RoundIcon
-                icon={PeopleIcon}
-                iconColorClass="text-orange-500 dark:text-orange-100"
-                bgColorClass="bg-orange-100 dark:bg-orange-500"
-                className="mr-4"
-              />
-            </InfoCard>
+            {/* <!-- Cards --> */}
+            <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+              <InfoCard title="Total Users" value={usersData.length}>
+                <RoundIcon
+                  icon={PeopleIcon}
+                  iconColorClass="text-orange-500 dark:text-orange-100"
+                  bgColorClass="bg-orange-100 dark:bg-orange-500"
+                  className="mr-4"
+                />
+              </InfoCard>
 
-            <InfoCard title="Status" value="success">
-              <RoundIcon
-                icon={BellIcon}
-                iconColorClass="text-green-500 dark:text-green-100"
-                bgColorClass="bg-green-100 dark:bg-green-500"
-                className="mr-4"
-              />
-            </InfoCard>
+              <InfoCard title="Status" value="success">
+                <RoundIcon
+                  icon={BellIcon}
+                  iconColorClass="text-green-500 dark:text-green-100"
+                  bgColorClass="bg-green-100 dark:bg-green-500"
+                  className="mr-4"
+                />
+              </InfoCard>
 
-            <InfoCard title="Leave" value="3">
-              <RoundIcon
-                icon={CartIcon}
-                iconColorClass="text-blue-500 dark:text-blue-100"
-                bgColorClass="bg-blue-100 dark:bg-blue-500"
-                className="mr-4"
-              />
-            </InfoCard>
+              <InfoCard title="Leave" value="3">
+                <RoundIcon
+                  icon={CartIcon}
+                  iconColorClass="text-blue-500 dark:text-blue-100"
+                  bgColorClass="bg-blue-100 dark:bg-blue-500"
+                  className="mr-4"
+                />
+              </InfoCard>
 
-            <InfoCard title="Turn Over" value="35">
-              <RoundIcon
-                icon={ChatIcon}
-                iconColorClass="text-teal-500 dark:text-teal-100"
-                bgColorClass="bg-teal-100 dark:bg-teal-500"
-                className="mr-4"
-              />
-            </InfoCard>
-          </div>
+              <InfoCard title="Turn Over" value="35">
+                <RoundIcon
+                  icon={ChatIcon}
+                  iconColorClass="text-teal-500 dark:text-teal-100"
+                  bgColorClass="bg-teal-100 dark:bg-teal-500"
+                  className="mr-4"
+                />
+              </InfoCard>
+            </div>
 
-          {/* <TableContainer>
+            {/* <TableContainer>
         <Table>
         <TableHeader>
         <tr>
@@ -145,9 +150,9 @@ function Dashboard() {
                 </TableFooter>
               </TableContainer> */}
 
-          {/* <PageTitle>Charts</PageTitle> */}
+            {/* <PageTitle>Charts</PageTitle> */}
 
-          {/* <div className="grid gap-6 mb-8 md:grid-cols-2">
+            {/* <div className="grid gap-6 mb-8 md:grid-cols-2">
         <ChartCard title="Revenue">
         <Doughnut {...doughnutOptions} />
         <ChartLegend legends={doughnutLegends} />
@@ -158,49 +163,56 @@ function Dashboard() {
         <ChartLegend legends={lineLegends} />
         </ChartCard>
       </div> */}
+          </div>
         </>
       )}
       {isRole === "employee" && (
         <>
-        <PageTitle>Profile</PageTitle>
-         <TableContainer className="mb-8">
-        <Table>
-          <TableHeader>
-            <tr>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Role</TableCell>
-            </tr>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell>
-                <div className="flex items-center text-sm">
-                  <Avatar className="hidden mr-3 md:block" src={""} alt="" />
-                  <div>
-                    <p className="font-semibold">
-                      <span>{profile?.firstName}</span>{" "}
-                      <span>{profile?.lastName}</span>
-                    </p>
-                  </div>
-                </div>
-              </TableCell>
-              <TableCell>
-                <span className="text-sm">{profile?.email}</span>
-              </TableCell>
-              <TableCell>
-                <Badge type={"primary"}>{profile?.role}</Badge>
-              </TableCell>
+          <div className="employee-dashboard">
+            <PageTitle>Profile</PageTitle>
+            <TableContainer className="mb-8">
+              <Table>
+                <TableHeader>
+                  <tr>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Email</TableCell>
+                    <TableCell>Role</TableCell>
+                  </tr>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>
+                      <div className="flex items-center text-sm">
+                        <Avatar
+                          className="hidden mr-3 md:block"
+                          src={""}
+                          alt=""
+                        />
+                        <div>
+                          <p className="font-semibold">
+                            <span>{profile?.firstName}</span>{" "}
+                            <span>{profile?.lastName}</span>
+                          </p>
+                        </div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <span className="text-sm">{profile?.email}</span>
+                    </TableCell>
+                    <TableCell>
+                      <Badge type={"success"}>{profile?.role}</Badge>
+                    </TableCell>
 
-              {/* <TableCell>
+                    {/* <TableCell>
                 <span className="text-sm">
                   {new Date("user.date").toLocaleDateString()}
                 </span>
               </TableCell> */}
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
         </>
       )}
     </>
