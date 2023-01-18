@@ -1,16 +1,9 @@
-/**
- * ⚠ These are used just to render the Sidebar!
- * You can include any link here, local or external.
- *
- * If you're looking to actual Router routes, go to
- * `routes/index.js`
- */
 const routes = [
   {
-    path: "/dashboard", // the url
-    icon: "HomeIcon", // the component being exported from icons/index.js
-    name: "Dashboard", // name that appear in Sidebar
-    role: ["admin"],
+    path: "/dashboard",
+    icon: "HomeIcon",
+    name: "Dashboard",
+    role: ["admin", "employee"],
   },
   {
     path: "/user-list",
@@ -26,14 +19,20 @@ const routes = [
   },
   {
     path: "/payslip",
-    icon: "BellIcon",
+    icon: "PagesIcon",
     name: "Payslip",
     role: ["admin", "employee"],
   },
   {
-    path: "/leave",
-    icon: "BellIcon",
+    path: "/leaves",
+    icon: "HeartIcon",
     name: "Leave",
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/attendance",
+    icon: "PeopleIcon",
+    name: "Attendance",
     role: ["admin", "employee"],
   },
 ];

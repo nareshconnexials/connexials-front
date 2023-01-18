@@ -20,13 +20,18 @@ const Payslip = lazy(() => import("../pages/Payslip"));
 const Leave = lazy(() => import("../pages/Leave"));
 const Profile = lazy(() => import("../pages/Profile"));
 const Settings = lazy(() => import("../pages/Settings"));
+const Page404 = lazy(() => import("../pages/404"));
+const UserLeave = lazy(() => import("../pages/UserLeave"));
+const ApplyStatus = lazy(() => import("../pages/ApplyStatus"));
+const StatusUpdate = lazy(() => import("../pages/StatusUpdate"));
+const Attendance = lazy(() => import("../pages/Attendance"));
 
 export const routes = [
   {
     path: "/",
     component: Dashboard,
     protected: true,
-    role: ["admin"],
+    role: ["admin", "employee"],
   },
   {
     path: "/login",
@@ -38,13 +43,13 @@ export const routes = [
     path: "/signup",
     component: SignUp,
     protected: false,
-    role: ["employee"],
+    role: ["admin", "employee"],
   },
   {
     path: "/forgot-password",
     component: ForgotPassword,
     protected: false,
-    role: ["employee"],
+    role: ["admin", "employee"],
   },
   {
     path: "/dashboard",
@@ -65,6 +70,18 @@ export const routes = [
     role: ["admin", "employee"],
   },
   {
+    path: "/apply-status",
+    component: ApplyStatus,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/status/update/:id",
+    component: StatusUpdate,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
     path: "/payslip",
     component: Payslip,
     protected: true,
@@ -74,11 +91,23 @@ export const routes = [
     path: "/add-account",
     component: AddAccount,
     protected: true,
-    role: { admin: "admin" },
+    role: ["admin"],
   },
   {
-    path: "/leave",
+    path: "/leaves",
     component: Leave,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/leaves/user/:id",
+    component: UserLeave,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/attendance",
+    component: Attendance,
     protected: true,
     role: ["admin", "employee"],
   },
@@ -94,9 +123,14 @@ export const routes = [
     protected: true,
     role: ["admin", "employee"],
   },
+  {
+    name: "Not Found",
+    path: "*",
+    component: Page404,
+    protected: true,
+    role: ["admin", "employee"],
+  },
 ];
-
-const isRole = getRole("role");
 
 function PrivateRoute({ children, route }) {
   const isAuthenticated = getToken("token");
@@ -113,12 +147,14 @@ function PublicRoutes({ children, route: { path } }) {
 }
 
 export default function MainRoutes() {
+  const role = "admin";
   return (
     <Router>
       <Suspense fallback={<ThemedSuspense />}>
         <Routes>
-          {routes.map((route) => (
-            <Route path="/" key={isRole}>
+          {routes
+            .filter((route) => route.role.includes(role))
+            .map((route) => (
               <Route
                 key={route.path}
                 path={route.path}
@@ -134,8 +170,7 @@ export default function MainRoutes() {
                   )
                 }
               />
-            </Route>
-          ))}
+            ))}
         </Routes>
       </Suspense>
     </Router>

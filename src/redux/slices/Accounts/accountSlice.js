@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import {
   clearRole,
   clearToken,
@@ -30,9 +31,9 @@ export const accountsSlice = createSlice({
       state.loading = false;
       state.hasErrors = { error: false, detail: "" };
     },
-    getAccountFailure: (state, { payload }) => {
+    getAccountFailure: (state) => {
       state.loading = false;
-      state.hasErrors = payload;
+      state.hasErrors = { error: true, detail: "" };
     },
   },
 });
@@ -57,15 +58,38 @@ export const signUpUser = (data, callback) => async (dispatch) => {
       formatSignUpApiData(data)
     );
 
-    if (response.data.msg === "success") {
+    if (response.data.message === "Account created successfully") {
+      const message = "Account Created";
       dispatch(getAccountSuccess(response.data));
+      toast(message, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "success",
+      });
+      if (callback) callback();
     }
-
-    if (callback) callback();
   } catch (error) {
-    dispatch(
-      getAccountFailure({ error: true, detail: error.response.data.msg })
-    );
+    if (error.response.data.error === "record not unique") {
+      const message2 = "User already exist";
+      toast(message2, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "error",
+      });
+      dispatch(getAccountFailure());
+    }
   }
 };
 
@@ -76,26 +100,68 @@ export const loginUser = (data, callback) => async (dispatch) => {
       "users/sessions",
       formatLoginApiData(data)
     );
-    const role = ["admin", "employee"]
+
     if (response.data.msg === "success") {
+      const message = "Account Login";
       setToken(response.data.token);
       setUserId(response.data.user_id);
 
-      // if(role.includes("employee")){
-      //   setRole("admin");
-      // }else{
-        // }
+      var segments = response.data.token.split(".");
+      if (segments.length !== 3) {
+        console.log(segments.length);
+        throw new Error("Not enough or too many segments");
+      }
+      if (response.data.role === "admin") {
         setRole("admin");
-
+      } else {
+        setRole("employee");
+      }
+      toast(message, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "success",
+      });
       dispatch(getAccountSuccess(response.data));
       if (callback) callback();
     }
   } catch (error) {
     if (error.response.status === 401) {
-      console.log(error);
-      dispatch(
-        getAccountFailure({ error: true, detail: error.response.data.msg })
-      );
+      const message = "Login error";
+      if (error.response.data.msg === "unauthorized request") {
+        toast(message, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "error",
+        });
+        dispatch(getAccountFailure());
+      }
+      if (error.response.data.msg === "email/password is wrong") {
+        const message = "email/password is wrong";
+        toast(message, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "warning",
+        });
+        dispatch(getAccountFailure());
+      }
     }
   }
 };
@@ -107,7 +173,7 @@ export const logOutUser = (callback) => async (dispatch) => {
     clearRole("role");
     if (callback) callback();
   } catch (error) {
-    dispatch(getAccountFailure());
+    dispatch(getAccountFailure(""));
   }
 };
 

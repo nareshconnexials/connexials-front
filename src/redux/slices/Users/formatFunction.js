@@ -4,7 +4,7 @@ export const formatProfileApiData = (data) => {
     firstName: first_name,
     lastName: last_name,
     email: email,
-    role:role
+    role: role
   };
   return formatProfileData;
 };

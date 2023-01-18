@@ -1,12 +1,17 @@
-import React, { useContext } from 'react'
+import React from "react";
 
-import SidebarContent from './SidebarContent'
-import { Transition, Backdrop } from '@windmill/react-ui'
+import SidebarContent from "./SidebarContent";
+import { Transition, Backdrop } from "@windmill/react-ui";
 
-import { SidebarContext } from '../../context/SidebarContext'
+import { useDispatch, useSelector } from "react-redux";
+import {
+  sidebarSelector,
+  closeSidebar,
+} from "../../redux/slices/Sidebar/sidebarSlice";
 
 function MobileSidebar() {
-  const { isSidebarOpen, closeSidebar } = useContext(SidebarContext)
+  const { isSidebarOpen } = useSelector(sidebarSelector);
+  const dispatch = useDispatch();
 
   return (
     <Transition show={isSidebarOpen}>
@@ -19,9 +24,8 @@ function MobileSidebar() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Backdrop onClick={closeSidebar} />
+          <Backdrop onClick={()=>{dispatch(closeSidebar())}} />
         </Transition>
-
         <Transition
           enter="transition ease-in-out duration-150"
           enterFrom="opacity-0 transform -translate-x-20"
@@ -36,7 +40,7 @@ function MobileSidebar() {
         </Transition>
       </>
     </Transition>
-  )
+  );
 }
 
-export default MobileSidebar
+export default MobileSidebar;

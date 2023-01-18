@@ -1,0 +1,58 @@
+/* DASHBOARD PAGE CSS  START */
+.employee-dashboard {
+  width: inherit;
+}
+.admin-dashboard {
+  width: inherit;
+}
+
+/* DASHBOARD PAGE CSS  END */
+
+/* USER-LIST PAGE CSS  START */
+
+.user-list-container {
+  width: 70rem !important;
+}
+.user-list {
+  width: inherit;
+}
+
+/* USER-LIST PAGE CSS  END */ 
+
+/* STATUS PAGE CSS START */
+.daily-status-btn {
+  height: 2.3rem;
+  background-color: #29a3ad;
+}
+
+.daily-status-btn:hover {
+  height: 2.3rem;
+  background-color: #29a3adc7;
+}
+
+.daily-status-btn:focus {
+  height: 2.3rem;
+  background-color: #29a3adc7;
+  box-shadow: 0 0 0 3px hsl(191deg 50% 35% / 45%);
+}
+
+/* STATUS PAGE CSS END */
+
+/* CREATE-ACCOUNT PAGE CSS START */
+
+.create-account-container {
+  width: 30rem;
+}
+
+/* CREATE-ACCOUNT PAGE CSS END */
+
+.apply-status-container {
+  width: 60rem;
+}
+
+.apply-title {
+  border: 2px solid lightgray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
