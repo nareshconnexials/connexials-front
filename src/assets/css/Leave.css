@@ -1,0 +1,140 @@
+.card {
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-top: 0.9rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: -1rem;
+}
+
+.card-item {
+  margin-top: -2.2rem;
+  margin-bottom: 8px;
+  padding: 0.3rem;
+  border-radius: 100px;
+}
+
+.leave-btn-div {
+  width: 18.15rem;
+}
+
+.leave-btn {
+  background-color: blue !important;
+}
+
+.select-box {
+  height: 2.2rem;
+  align-items: center;
+  margin-top: 0.35rem;
+  width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.label {
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+.leave-container {
+  max-width: 50rem;
+}
+
+.leave-modal{
+  width:45rem;
+}
+
+.apply-leave-btn {
+  margin-right: 2rem;
+  width: 13%;
+  background-color: rgb(39, 201, 136);
+}
+
+.apply-leave-btn:hover {
+  transition: all 0.8s;
+  background-color: rgb(36, 146, 102);
+}
+
+.leave-back-btn {
+  margin-right: 2rem;
+  width: 10%;
+  background-color: rgb(39, 93, 201);
+}
+
+.leave-back-btn:hover {
+  transition: all 0.8s;
+  background-color: rgb(32, 66, 134);
+}
+
+.leave-textarea:focus-visible {
+  box-shadow: 0 0 0 3px hsl(251deg 94% 87% / 45%) !important;
+  outline: rgb(105, 79, 222) !important;
+}
+
+.alloted-balance-container {
+  width: 28rem;
+  margin-top: -2rem;
+  margin-right: 2rem;
+  overflow-x: hidden;
+} 
+
+.table-cell-alloted-balance {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  align-items: center;
+}
+
+.applied-leave-container {
+  width: 47rem;
+  margin-top: -2rem;
+}
+
+.applied-leave-cell:nth-child(1) {
+  width: 12rem;
+}
+
+.applied-leave-cell:nth-child(2) {
+  width: 6rem;
+}
+
+.applied-leave-cell:nth-child(3) {
+  width: 6rem;
+}
+
+.applied-leave-cell:nth-child(4) {
+  width: 7rem;
+}
+
+.applied-leave-cell:nth-child(5) {
+  width: 27rem;
+}
+
+.alloted-balance-table-cell {
+  margin-top: -1rem;
+}
+
+.reason-cell {
+  overflow-wrap: break-word !important;
+}
+
+.leave-card {
+  background-color: rgb(145, 188, 225);
+}
+
+.theme-dark .dark\:leave-card-dark {
+  background-color: rgb(255, 255, 255);
+}
+
+.leave-card-text {
+  color: rgb(71, 40, 145);
+}
