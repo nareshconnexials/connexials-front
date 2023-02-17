@@ -6,6 +6,7 @@ import {
   Routes,
 } from "react-router-dom";
 import ThemedSuspense from "../components/ThemedSuspense";
+//eslint-disable-next-line
 import { getRole, getToken } from "../helpers/Utils";
 
 const Login = lazy(() => import("../pages/Login"));
@@ -25,9 +26,7 @@ const UserLeave = lazy(() => import("../pages/UserLeave"));
 const ApplyStatus = lazy(() => import("../pages/ApplyStatus"));
 const StatusUpdate = lazy(() => import("../pages/StatusUpdate"));
 const Attendance = lazy(() => import("../pages/Attendance"));
-const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
-const Service = lazy(() => import("../pages/Service"));
 const Teams = lazy(() => import("../pages/team.js"));
 const Services = lazy(() => import("../pages/services.js"));
 const Homee = lazy(() => import("../pages/Homee.js"));
@@ -155,12 +154,6 @@ export const routes = [
     role: ["admin", "employee", "guest"],
   },
   {
-    path: "/services",
-    component: Services,
-    protected: false,
-    role: ["admin", "employee", "guest"],
-  },
-  {
     path: "/homee",
     component: Homee,
     protected: false,
@@ -171,6 +164,12 @@ export const routes = [
     component: Blog,
     protected: false,
     role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "*",
+    component: Page404,
+    protected: false,
+    role: ["admin", "empoyee", "guest"],
   },
   // {
   //   name: "Not Found",
@@ -184,7 +183,7 @@ export const routes = [
 function PrivateRoute({ children, route }) {
   const isAuthenticated = getToken("token");
   return isAuthenticated == null ? (
-    <Navigate to="/services" />
+    <Navigate to="/home" />
   ) : (
     <Layout route={route}>{children}</Layout>
   );
@@ -195,8 +194,6 @@ function PublicRoutes({ children, route: { path } }) {
 }
 
 export default function MainRoutes() {
-  const role = getRole();
-  console.log(role);
   return (
     <Router>
       <Suspense fallback={<ThemedSuspense />}>

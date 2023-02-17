@@ -36,9 +36,9 @@ const routes = [
     role: ["employee"],
   },
   {
-    path: "/services",
+    path: "/home",
     icon: "PeopleIcon",
-    name: "Services",
+    name: "Home",
     role: ["guest"],
   },
   {

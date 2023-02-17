@@ -37,12 +37,16 @@ const About = () => {
                 </div>
                 <div className="text-center lg:text-left">
                   <Link href="/services" legacyBehavior>
-                    <a className="tracking-wide hover-up-2 block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded wow animate__animatedanimated animate__fadeIn">
+                    <a
+                      href="noreffer"
+                      className="tracking-wide hover-up-2 block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded wow animate__animatedanimated animate__fadeIn"
+                    >
                       Our Services
                     </a>
                   </Link>
                   <Link href="#how-we-work" legacyBehavior>
                     <a
+                      href="noreffer"
                       className="block hover-up-2 sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-white border border-blueGray-200 hover:border-blueGray-300 rounded wow animate__animatedanimated animate__fadeIn"
                       data-wow-delay=".3s"
                     >

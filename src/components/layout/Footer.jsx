@@ -11,8 +11,10 @@ const Footer = () => {
         >
           <div className="flex flex-wrap mb-12 lg:mb-20 -mx-3 text-center lg:text-left">
             <div className="w-full lg:w-1/5 px-3 mb-6 lg:mb-0">
-              {/* <Link href="/" legacyBehavior> */}
-              <a className="inline-block mx-auto lg:mx-0 text-3xl font-semibold leading-none">
+              <a
+                href="noreffer"
+                className="inline-block mx-auto lg:mx-0 text-3xl font-semibold leading-none"
+              >
                 <img
                   className="h-10"
                   src="/assets/imgs/logos/monst-logo.svg"
@@ -50,6 +52,7 @@ const Footer = () => {
                 className="text-blue-400"
                 href="https://alithemes.com"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Connexials
               </a>

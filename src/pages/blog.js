@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout/Layout";
 import { Link } from "react-router-dom";
 
 import Footer from "../components/layout/Footer";
@@ -15,7 +14,10 @@ const Blog = () => {
           </h1>
           <ul className="flex text-gray-500 text-sm lg:text-sm pb-12 wow animate__animated animate__fadeIn animated">
             <li className="inline-flex items-center">
-              <a href="#" className="hover:text-blue-500 text-gray-800">
+              <a
+                href="noreferrer"
+                className="hover:text-blue-500 text-gray-800"
+              >
                 Home
               </a>
               <svg
@@ -31,7 +33,10 @@ const Blog = () => {
               </svg>
             </li>
             <li className="inline-flex items-center">
-              <a href="#" className="hover:text-blue-500 text-gray-800">
+              <a
+                href="noreferrer"
+                className="hover:text-blue-500 text-gray-800"
+              >
                 Our Services
               </a>
               <svg
@@ -56,7 +61,7 @@ const Blog = () => {
               data-wow-delay=".1s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-6.png"
@@ -66,7 +71,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Bussiness
                     </span>
@@ -76,7 +81,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     Plan Your Project in 2022
                   </a>
                 </Link>
@@ -91,7 +96,7 @@ const Blog = () => {
               data-wow-delay=".3s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-7.png"
@@ -102,7 +107,7 @@ const Blog = () => {
               <div className="mt-6 text-sm text-blue-400">
                 <p className="mt-6 text-sm text-blue-400">
                   <Link href="/blog-2" legacyBehavior>
-                    <a>
+                    <a href="noreferrer">
                       <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                         Analytics
                       </span>
@@ -115,7 +120,7 @@ const Blog = () => {
               </div>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     The Next Big Challenge for Content Marketer
                   </a>
                 </Link>
@@ -133,7 +138,7 @@ const Blog = () => {
               data-wow-delay=".1s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-8.png"
@@ -143,7 +148,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Company
                     </span>
@@ -153,7 +158,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     How to Make Website WCAG Compliant?
                   </a>
                 </Link>
@@ -168,7 +173,7 @@ const Blog = () => {
               data-wow-delay=".3s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-9.jpg"
@@ -178,7 +183,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Target
                     </span>
@@ -188,7 +193,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     The Future of Enterprise API Development
                   </a>
                 </Link>
@@ -203,7 +208,7 @@ const Blog = () => {
               data-wow-delay=".1s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-10.jpg"
@@ -213,7 +218,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Layers
                     </span>
@@ -223,7 +228,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     How To Make Your iOS 13 Compatible?
                   </a>
                 </Link>
@@ -238,7 +243,7 @@ const Blog = () => {
               data-wow-delay=".3s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-11.jpg"
@@ -248,7 +253,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Consultancy
                     </span>
@@ -258,7 +263,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     You have a Great Is Business Idea?
                   </a>
                 </Link>
@@ -273,7 +278,7 @@ const Blog = () => {
               data-wow-delay=".5s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-12.jpg"
@@ -283,7 +288,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Analytics
                     </span>
@@ -293,7 +298,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     Plan Your Project with Your Software
                   </a>
                 </Link>
@@ -308,7 +313,7 @@ const Blog = () => {
               data-wow-delay=".3s"
             >
               <Link href="/blog-single" legacyBehavior>
-                <a>
+                <a href="noreferrer">
                   <img
                     className="h-80 w-full object-cover rounded"
                     src="/assets/imgs/placeholders/img-13.jpg"
@@ -318,7 +323,7 @@ const Blog = () => {
               </Link>
               <p className="mt-6 text-sm text-blue-400">
                 <Link href="/blog-2" legacyBehavior>
-                  <a>
+                  <a href="noreferrer">
                     <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
                       Digital
                     </span>
@@ -328,7 +333,7 @@ const Blog = () => {
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-blue-500">
                     You have a Great Is Business Idea?
                   </a>
                 </Link>
@@ -341,7 +346,10 @@ const Blog = () => {
           </div>
           <div className="text-center">
             <Link href="/blog-2" legacyBehavior>
-              <a className="hover-up-5 inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded">
+              <a
+                href="noreferrer"
+                className="hover-up-5 inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded"
+              >
                 Show all posts
               </a>
             </Link>

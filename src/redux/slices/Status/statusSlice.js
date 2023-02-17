@@ -45,7 +45,6 @@ export const {
 
 export const statusSelector = (state) => state.status;
 
-console.log(statusSelector);
 export default statusSlice.reducer;
 
 export const addDailyStatus = (data, callback) => async (dispatch) => {

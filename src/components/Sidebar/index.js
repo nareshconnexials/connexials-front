@@ -5,7 +5,6 @@ import MobileSidebar from "./MobileSidebar";
 
 function Sidebar() {
   const location = useLocation();
-  console.log(location.pathname);
   const hideLoc = ["/login", "/signup", "/forgot-password"];
   return (
     <>

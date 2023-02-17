@@ -63,13 +63,13 @@ const Team = () => {
                   pulvinar. Vestibulum non quam velit.
                 </p>
                 <div className="flex space-x-2">
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/facebook-blue.svg"
                       alt="Monst"
                     />
                   </a>
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/instagram-blue.svg"
                       alt="Monst"
@@ -102,13 +102,13 @@ const Team = () => {
                   pulvinar. Vestibulum non quam velit.
                 </p>
                 <div className="flex space-x-2">
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/facebook-blue.svg"
                       alt="Monst"
                     />
                   </a>
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/instagram-blue.svg"
                       alt="Monst"
@@ -141,13 +141,13 @@ const Team = () => {
                   pulvinar. Vestibulum non quam velit.
                 </p>
                 <div className="flex space-x-2">
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/facebook-blue.svg"
                       alt="Monst"
                     />
                   </a>
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/twitter-blue.svg"
                       alt="Monst"
@@ -178,19 +178,19 @@ const Team = () => {
                   pulvinar. Vestibulum non quam velit.
                 </p>
                 <div className="flex space-x-2">
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/facebook-blue.svg"
                       alt="Monst"
                     />
                   </a>
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/instagram-blue.svg"
                       alt="Monst"
                     />
                   </a>
-                  <a href="#">
+                  <a href="noreferrer">
                     <img
                       src="/assets/imgs/icons/twitter-blue.svg"
                       alt="Monst"

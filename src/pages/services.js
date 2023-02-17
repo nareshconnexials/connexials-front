@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout/Layout";
 import CounterUp from "../components/elements/Counterup";
 import Footer from "../components/layout/Footer";
 

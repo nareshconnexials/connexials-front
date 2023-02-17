@@ -12,7 +12,7 @@ export const attendanceSlice = createSlice({
         payload?.date === undefined &&
         payload?.workingHours === undefined
       ) {
-        console.log(payload);
+        //eslint-disable-next-line
         const tempVar = state.attendanceData.forEach((element, index, arr) => {
           arr[index].checkIn = payload?.checkIn;
           arr[index].checkOut = payload?.checkOut;

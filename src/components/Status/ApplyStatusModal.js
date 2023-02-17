@@ -7,20 +7,17 @@ import { FaCircle, FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { addDailyStatus } from "../../redux/slices/Status/statusSlice";
 import { createStatusModalSchema } from "../../redux/validation/statusModalValidation";
-import { useEffect } from 'react';
 
 const ApplyStatusModal = () => {
   const statusFields = {
     toEmail: "",
     statusDate: "",
     billingHours: "",
-    
   };
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [countTask, setCountTask] = useState(0);
-  const [deleteTaskField, setDeleteTaskField] = useState([<></>]);
   const [addMoreTaskField, setAddMoreTaskField] = useState([
     <TaskFields countKey={countTask} />,
   ]);
@@ -36,22 +33,16 @@ const ApplyStatusModal = () => {
   });
   const handleAddMoreTask = () => {
     setCountTask(countTask + 1);
-        setAddMoreTaskField([
+    setAddMoreTaskField([
       ...addMoreTaskField,
       <TaskFields countKey={countTask} />,
     ]);
   };
 
-
   const handleDeleteTaskFields = (count) => {
-   const updatedData = addMoreTaskField.filter((e,index)=>(
-    index!==count
-    
-   ))
-  setAddMoreTaskField([...addMoreTaskField,updatedData])
- 
+    const updatedData = addMoreTaskField.filter((e, index) => index !== count);
+    setAddMoreTaskField([...addMoreTaskField, updatedData]);
   };
-  
 
   function TaskFields(props) {
     return (
@@ -119,7 +110,6 @@ const ApplyStatusModal = () => {
               {formik.errors.statusType ? formik.errors.statusType : null}
             </span>
           </Label>
-       
         </div>
         <div className="flex w-full bg-gray-50 dark:bg-gray-800 p-5">
           <div className="flex w-full">
@@ -144,13 +134,10 @@ const ApplyStatusModal = () => {
               </span>
             </Label>
           </div>
-          <div  onClick={()=>handleDeleteTaskFields(countTask)}>
-          <span className="w-12 flex justify-end mt-10" >
-            <FaTrashAlt
-              className="text-red-600 cursor-pointer"
-              
-            />
-          </span>
+          <div onClick={() => handleDeleteTaskFields(countTask)}>
+            <span className="w-12 flex justify-end mt-10">
+              <FaTrashAlt className="text-red-600 cursor-pointer" />
+            </span>
           </div>
         </div>
       </div>
@@ -164,8 +151,6 @@ const ApplyStatusModal = () => {
       })
     );
   };
- 
-
 
   return (
     <>
@@ -174,7 +159,8 @@ const ApplyStatusModal = () => {
           <div className="flex flex-col items-center overflow-y-auto">
             <h1 className="apply-title flex items-center mb-1 mt-1 pl-2 w-full h-12 text-3xl font-semibold text-gray-600 dark:text-gray-300">
               Send Daily Status Update
-            </h1>Please Find My Status Update:
+            </h1>
+            Please Find My Status Update:
             <div className="flex mt-2 px-2 w-full justify-between">
               <SectionTitle>Do want change your availability?</SectionTitle>
               <div className="w-32 flex">
@@ -276,11 +262,9 @@ const ApplyStatusModal = () => {
                         return (
                           <>
                             <div key={i}>{fields}</div>
-                            
                           </>
                         );
                       })}
-
                   </div>
                   <div>
                     <span
@@ -293,7 +277,6 @@ const ApplyStatusModal = () => {
 
                   <div className="flex w-full justify-between mt-10">
                     <button
-                     
                       onClick={() => {
                         navigate("/status");
                       }}

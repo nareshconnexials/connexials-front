@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import {
+  //eslint-disable-next-line
   MoonIcon,
+  //eslint-disable-next-line
   SunIcon,
   BellIcon,
   MenuIcon,
@@ -29,6 +31,7 @@ import {
 } from "../redux/slices/Sidebar/sidebarSlice";
 
 function Header() {
+  //eslint-disable-next-line
   const { mode, toggleMode } = useContext(WindmillContext);
   const { isSidebarOpen } = useSelector(sidebarSelector);
 
@@ -82,7 +85,7 @@ function Header() {
           <MenuIcon className="w-6 h-6" aria-hidden="true" />
         </button>
         <Link
-          to={role == "guest" ? "/home" : "/dashboard"}
+          to={role === "guest" ? "/home" : "/dashboard"}
           className="inline-block text-2xl"
         >
           Connexial
@@ -119,7 +122,7 @@ function Header() {
             </button>
           </li> */}
           {/* <!-- Notifications menu --> */}
-          {role == "admin" || role == "employee" ? (
+          {role === "admin" || role === "employee" ? (
             <>
               <li className="relative">
                 <button

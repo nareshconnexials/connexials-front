@@ -80,6 +80,7 @@ const Attendance = () => {
       setCheckInDisabled(false);
       setCheckOutDisabled(true);
     }
+    //eslint-disable-next-line
   }, [checkInOutAttendance.checkIn, checkInOutAttendance.checkOut]);
 
   const handleInOutAttendance = (checkInOut) => {

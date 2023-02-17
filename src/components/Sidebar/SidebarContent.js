@@ -1,6 +1,6 @@
 import React from "react";
 import routes from "../../routes/sidebar";
-import { Link, NavLink, Route, Routes, useNavigate } from "react-router-dom";
+import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import * as Icons from "../../icons";
 import { Button } from "@windmill/react-ui";
 import ThemedSuspense from "../ThemedSuspense";

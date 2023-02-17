@@ -1,16 +1,12 @@
 import React from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import ImageLight from "../assets/img/login-office.jpeg";
 import ImageDark from "../assets/img/login-office-dark.jpeg";
 import { Label, Input, Button } from "@windmill/react-ui";
 import { useFormik } from "formik";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginAccountSchema } from "../redux/validation/accountValidation";
-import {
-  accountsSelector,
-  loginUser,
-} from "../redux/slices/Accounts/accountSlice";
-import { getRole } from "../helpers/Utils";
+import { loginUser } from "../redux/slices/Accounts/accountSlice";
 
 function Login() {
   const loginDetails = {
