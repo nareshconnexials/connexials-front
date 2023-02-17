@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
+import Header from "../components/layout/Header";
+
 import Main from "./Main";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -21,15 +22,15 @@ function Layout({ children }) {
 
   return (
     <div
-      className={`flex h-screen bg-gray-50 dark:bg-gray-900 ${
+      className={`flex h-screen  dark:bg-gray-900 ${
         isSidebarOpen && "overflow-hidden"
       }`}
     >
-      <Sidebar />
-
       <div className="flex flex-col flex-1 w-full">
         <Header />
-        <Main>{children}</Main>
+        <div className="flex justify-center">
+          <Main>{children}</Main>
+        </div>
       </div>
     </div>
   );

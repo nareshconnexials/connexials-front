@@ -35,6 +35,24 @@ const routes = [
     name: "Attendance",
     role: ["employee"],
   },
+  {
+    path: "/services",
+    icon: "PeopleIcon",
+    name: "Services",
+    role: ["guest"],
+  },
+  {
+    path: "/teams",
+    icon: "PeopleIcon",
+    name: "Teams",
+    role: ["guest"],
+  },
+  {
+    path: "/about",
+    icon: "PeopleIcon",
+    name: "About",
+    role: ["guest"],
+  },
 ];
 
 export default routes;

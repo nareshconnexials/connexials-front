@@ -25,9 +25,13 @@ const UserLeave = lazy(() => import("../pages/UserLeave"));
 const ApplyStatus = lazy(() => import("../pages/ApplyStatus"));
 const StatusUpdate = lazy(() => import("../pages/StatusUpdate"));
 const Attendance = lazy(() => import("../pages/Attendance"));
-const Home = lazy(()=>import("../pages/Home"))
-const About = lazy(()=>import("../pages/About"))
-const Service = lazy(()=>import("../pages/Service"))
+const Home = lazy(() => import("../pages/Home"));
+const About = lazy(() => import("../pages/About"));
+const Service = lazy(() => import("../pages/Service"));
+const Teams = lazy(() => import("../pages/team.js"));
+const Services = lazy(() => import("../pages/services.js"));
+const Homee = lazy(() => import("../pages/Homee.js"));
+const Blog = lazy(() => import("../pages/blog.js"));
 
 export const routes = [
   {
@@ -37,41 +41,40 @@ export const routes = [
     role: ["admin", "employee"],
   },
   {
+    path: "/dashboard",
+    component: Dashboard,
+    protected: true,
+    role: ["admin", "employee"],
+  },
+  {
     path: "/home",
     component: Home,
-    protected: false,
+    protected: true,
     role: ["admin", "employee"],
   },
   {
     path: "/about",
     component: About,
     protected: false,
-    role: ["admin", "employee"],
+    role: ["admin", "employee", "guest"],
   },
-  {
-    path: "/service",
-    component: Service,
-    protected: false,
-    role: ["admin", "employee"],
-  },
-  
   {
     path: "/login",
     component: Login,
     protected: false,
-    role: ["admin", "employee"],
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/signup",
     component: SignUp,
     protected: false,
-    role: ["admin", "employee"],
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/forgot-password",
     component: ForgotPassword,
     protected: false,
-    role: ["admin", "employee"],
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/dashboard",
@@ -145,6 +148,30 @@ export const routes = [
     protected: true,
     role: ["admin", "employee"],
   },
+  {
+    path: "/teams",
+    component: Teams,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/services",
+    component: Services,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/homee",
+    component: Homee,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/blog",
+    component: Blog,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
   // {
   //   name: "Not Found",
   //   path: "*",
@@ -156,43 +183,41 @@ export const routes = [
 
 function PrivateRoute({ children, route }) {
   const isAuthenticated = getToken("token");
-  return isAuthenticated ? (
-    <Layout route={route}>{children}</Layout>
+  return isAuthenticated == null ? (
+    <Navigate to="/services" />
   ) : (
-    <Navigate to="/login" />
+    <Layout route={route}>{children}</Layout>
   );
 }
 
 function PublicRoutes({ children, route: { path } }) {
-  const isAuthenticated = getToken("token");
-  return isAuthenticated ? <Navigate to="/" replace /> : children;
+  return <Layout route={path}>{children}</Layout>;
 }
 
 export default function MainRoutes() {
-  const role = "admin";
+  const role = getRole();
+  console.log(role);
   return (
     <Router>
       <Suspense fallback={<ThemedSuspense />}>
         <Routes>
-          {routes
-            .filter((route) => route.role.includes(role))
-            .map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={
-                  route.protected ? (
-                    <PrivateRoute route={route}>
-                      <route.component />
-                    </PrivateRoute>
-                  ) : (
-                    <PublicRoutes route={route}>
-                      <route.component />
-                    </PublicRoutes>
-                  )
-                }
-              />
-            ))}
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={
+                route.protected ? (
+                  <PrivateRoute route={route}>
+                    <route.component />
+                  </PrivateRoute>
+                ) : (
+                  <PublicRoutes route={route}>
+                    <route.component />
+                  </PublicRoutes>
+                )
+              }
+            />
+          ))}
         </Routes>
       </Suspense>
     </Router>

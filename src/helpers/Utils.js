@@ -19,7 +19,6 @@ export const getToken = () => {
         : null;
   } catch (error) {
     console.log(">>>>: src/helpers/Utils.js  : getToken -> error", error);
-    token = null;
   }
   return token;
 };
