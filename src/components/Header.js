@@ -19,7 +19,7 @@ import {
 } from "@windmill/react-ui";
 
 import { getRole, getUserId } from "../helpers/Utils";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../redux/slices/Accounts/accountSlice";
 import { getUsersData } from "../redux/slices/Users/usersSlice";
@@ -72,16 +72,24 @@ function Header() {
   const role = getRole();
 
   return (
-    <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
-      <div className="container flex items-center justify-between lg:justify-end h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
-        {/* <!-- Mobile hamburger --> */}
+    <header className="flex z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
+      <div className="flex align-center px-10 flex-shrink-0 text-purple-600">
         <button
-          className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
+          className=" mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
           onClick={handleToggleSidebar}
           aria-label="Menu"
         >
           <MenuIcon className="w-6 h-6" aria-hidden="true" />
         </button>
+        <Link
+          to={role == "guest" ? "/home" : "/dashboard"}
+          className="inline-block text-2xl"
+        >
+          Connexial
+        </Link>
+      </div>
+      <div className="container flex items-center justify-end lg:justify-end h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+        {/* <!-- Mobile hamburger --> */}
         {/* <!-- Search input --> */}
         {/* <div className="flex justify-center flex-1 lg:mr-32">
           <div className="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
@@ -89,12 +97,12 @@ function Header() {
               <SearchIcon className="w-4 h-4" aria-hidden="true" />
             </div>
             <Input
-            className="pl-8 text-gray-700"
-            placeholder="Search for projects"
-            aria-label="Search"
+              className="pl-8 text-gray-700"
+              placeholder="Search for projects"
+              aria-label="Search"
             />
-            </div>
-          </div> */}
+          </div>
+        </div> */}
         <ul className="flex items-center flex-shrink-0 space-x-6">
           {/* <!-- Theme toggler --> */}
           {/* <li className="flex">

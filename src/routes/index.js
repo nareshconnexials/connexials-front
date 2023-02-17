@@ -48,9 +48,9 @@ export const routes = [
   },
   {
     path: "/home",
-    component: Home,
-    protected: true,
-    role: ["admin", "employee"],
+    component: Services,
+    protected: false,
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/about",

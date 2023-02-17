@@ -11,19 +11,13 @@ function Icon({ icon, ...props }) {
   return <Icon {...props} />;
 }
 
-function SidebarContent() {
+function SidebarContent(props) {
   const isRole = getRole("role");
 
   const navigate = useNavigate();
 
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
-      <Link
-        className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-        to={isRole == "guest" ? "/services" : "/"}
-      >
-        Connexials
-      </Link>
       <ul className="mt-6">
         {routes
           .filter((i) => i.role.includes(isRole))
@@ -41,7 +35,9 @@ function SidebarContent() {
                   aria-hidden="true"
                   icon={route.icon}
                 />
-                <span className="ml-4">{route.name}</span>
+                {props.active ? (
+                  <span className="ml-4">{route.name}</span>
+                ) : null}
               </NavLink>
             </li>
           ))}
