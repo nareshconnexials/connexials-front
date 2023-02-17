@@ -4,7 +4,7 @@ import MainRoutes from "./routes";
 import { ToastContainer } from "react-toastify";
 import "./assets/css/global.css"
 
-function App() {
+function App() { 
   return (
     <>
       <ThemeProvider>

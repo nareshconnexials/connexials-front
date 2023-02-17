@@ -4,7 +4,7 @@ export const formatLeaveModalData = (data) => {
   const { fromDate, toDate, fromSession, toSession, days, mailTo, reason } =
     data;
   const formatLeaveData = {
-    leave: {
+    holiday: {
       user_id: getUserId(),
       from_date: fromDate,
       to_date: toDate,
@@ -19,6 +19,7 @@ export const formatLeaveModalData = (data) => {
 };
 
 export const formatGetLeaveData = (data) => {
+  
   const formatLeaveData = {
     leaveData: data.map(
       ({

@@ -45,9 +45,11 @@ export const {
 
 export const statusSelector = (state) => state.status;
 
+console.log(statusSelector);
 export default statusSlice.reducer;
 
 export const addDailyStatus = (data, callback) => async (dispatch) => {
+  // console.log(data);
   try {
     dispatch(startLoading());
     dispatch(addDailyStatusSuccess(data));

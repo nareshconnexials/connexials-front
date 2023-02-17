@@ -25,6 +25,9 @@ const UserLeave = lazy(() => import("../pages/UserLeave"));
 const ApplyStatus = lazy(() => import("../pages/ApplyStatus"));
 const StatusUpdate = lazy(() => import("../pages/StatusUpdate"));
 const Attendance = lazy(() => import("../pages/Attendance"));
+const Home = lazy(()=>import("../pages/Home"))
+const About = lazy(()=>import("../pages/About"))
+const Service = lazy(()=>import("../pages/Service"))
 
 export const routes = [
   {
@@ -33,6 +36,25 @@ export const routes = [
     protected: true,
     role: ["admin", "employee"],
   },
+  {
+    path: "/home",
+    component: Home,
+    protected: false,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/about",
+    component: About,
+    protected: false,
+    role: ["admin", "employee"],
+  },
+  {
+    path: "/service",
+    component: Service,
+    protected: false,
+    role: ["admin", "employee"],
+  },
+  
   {
     path: "/login",
     component: Login,
@@ -123,13 +145,13 @@ export const routes = [
     protected: true,
     role: ["admin", "employee"],
   },
-  {
-    name: "Not Found",
-    path: "*",
-    component: Page404,
-    protected: true,
-    role: ["admin", "employee"],
-  },
+  // {
+  //   name: "Not Found",
+  //   path: "*",
+  //   component: Page404,
+  //   protected: true,
+  //   role: ["admin", "employee"],
+  // },
 ];
 
 function PrivateRoute({ children, route }) {

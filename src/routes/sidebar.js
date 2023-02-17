@@ -33,7 +33,7 @@ const routes = [
     path: "/attendance",
     icon: "PeopleIcon",
     name: "Attendance",
-    role: ["admin", "employee"],
+    role: ["employee"],
   },
 ];
 

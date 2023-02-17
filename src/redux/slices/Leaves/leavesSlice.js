@@ -6,6 +6,7 @@ import {
   formatGetLeaveDataById,
   formatLeaveModalData,
 } from "./formatFunction";
+import { getToken } from '../../../helpers/Utils';
 
 export const leavesSlice = createSlice({
   name: "leaves",
@@ -83,11 +84,14 @@ export const addLeaveData = (data, callback) => async (dispatch) => {
   try {
     dispatch(startLoading());
     const response = await axios.post(
-      "users/leaves",
-      formatLeaveModalData(data)
+      "users/holidays",formatLeaveModalData(data),{
+        'headers': {
+          'Authorization': `Bearer Token ${getToken()}`,
+          "Content-Type": 'application/json'
+        },
+      },
+      
     );
-
-    if (response.data.message === "Leave created successfully") {
       dispatch(addUsersLeaveSuccess(data));
       const message = "Leave Applied";
       toast(message, {
@@ -102,7 +106,7 @@ export const addLeaveData = (data, callback) => async (dispatch) => {
         type: "success",
       });
       if (callback) callback();
-    }
+    
   } catch (error) {
     dispatch(addUsersLeaveFailure());
     if (error) {
@@ -125,7 +129,8 @@ export const addLeaveData = (data, callback) => async (dispatch) => {
 export const getUserLeaveData = () => async (dispatch) => {
   try {
     dispatch(startLoading());
-    const response = await axios.get("users/leaves");
+    const response = await axios.get("users/holidays");
+    
     dispatch(getUsersLeaveSuccess(formatGetLeaveData(response.data).leaveData));
   } catch (error) {
     dispatch(getUsersLeaveFailure());
