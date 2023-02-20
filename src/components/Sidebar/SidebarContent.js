@@ -13,7 +13,6 @@ function Icon({ icon, ...props }) {
 
 function SidebarContent(props) {
   const isRole = getRole("role");
-
   const navigate = useNavigate();
 
   return (
@@ -49,7 +48,7 @@ function SidebarContent(props) {
             navigate("/add-account");
           }}
         >
-          <Button>
+          <Button style={{ display: props.active ? "inline-block" : "none" }}>
             Add account
             <span className="ml-2" aria-hidden="true">
               +

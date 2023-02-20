@@ -9,6 +9,7 @@ import {
   closeSidebar,
   sidebarSelector,
 } from "../redux/slices/Sidebar/sidebarSlice";
+import MobileSidebar from "../components/Sidebar/MobileSidebar";
 
 function Layout({ children }) {
   const { isSidebarOpen } = useSelector(sidebarSelector);
@@ -22,6 +23,7 @@ function Layout({ children }) {
   return (
     <div className={`flex h-screen  ${isSidebarOpen && "overflow-hidden"}`}>
       <div className="flex flex-col flex-1 w-full">
+        <MobileSidebar />
         <Header />
         <div className="flex bg-gray-50 dark:bg-gray-900">
           <Sidebar />

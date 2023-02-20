@@ -1,0 +1,10 @@
+.sidebar.active {
+  opacity: 1;
+  width: 10vw;
+  transition: all 0.3s;
+}
+.sidebar.inactive {
+  opacity: 0.9;
+  width: 60px;
+  transition: all 0.3s;
+}
