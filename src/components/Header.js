@@ -10,6 +10,7 @@ import {
   OutlinePersonIcon,
   OutlineCogIcon,
   OutlineLogoutIcon,
+  User,
 } from "../icons";
 
 import {
@@ -86,7 +87,7 @@ function Header() {
         </button>
         <Link
           to={role === "guest" ? "/home" : "/dashboard"}
-          className="inline-block text-2xl"
+          className="inline-block text-3xl text-purple-500"
         >
           Connexial
         </Link>
@@ -212,7 +213,7 @@ function Header() {
                   navigate("/login");
                 }}
               >
-                Log In
+                <User className="w-8 h-8" aria-hidden="true" />
               </button>
             </li>
           )}

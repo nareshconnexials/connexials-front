@@ -5,7 +5,7 @@ import Footer from "../components/layout/Footer";
 const Team = () => {
   return (
     <>
-      <section className="-mt-24 pt-40 pb-10 bg-blueGray-100">
+      <section className="-mt-24 pt-40 pb-10 bg-purpleGray-100">
         <div className="container text-center">
           <h1 className="text-2xl lg:text-5xl font-bold mb-5 wow animate__animated animate__fadeIn animated">
             Our Team
@@ -13,11 +13,11 @@ const Team = () => {
         </div>
       </section>
 
-      <section className="pb-20 bg-blueGray-50">
+      <section className="pb-20 bg-purpleGray-50">
         <div className="container">
           <div className="max-w-lg mx-auto mb-12 text-center">
             <span
-              className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn animated"
+              className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
               Our Team Leader
@@ -26,11 +26,11 @@ const Team = () => {
               className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
-              Meet Your <span className="text-blue-500">Experts</span> <br />
+              Meet Your <span className="text-purple-500">Experts</span> <br />
               Team Member
             </h2>
             <p
-              className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn animated"
+              className="text-purpleGray-400 leading-loose wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
               Our Customers Very Happy With Our Services.
@@ -57,7 +57,7 @@ const Team = () => {
                     </p>
                   </div>
                 </div>
-                <p className="leading-loose text-blueGray-400 mb-5">
+                <p className="leading-loose text-purpleGray-400 mb-5">
                   Donec consequat tortor risus, at auctor felis consequat a.
                   Donec quis dolor sem. Sed sollicitudin magna in hendrerit
                   pulvinar. Vestibulum non quam velit.
@@ -96,7 +96,7 @@ const Team = () => {
                     <p className="text-gray-500 text-xs mt-3">CEO-Founder</p>
                   </div>
                 </div>
-                <p className="leading-loose text-blueGray-400 mb-5">
+                <p className="leading-loose text-purpleGray-400 mb-5">
                   Donec consequat tortor risus, at auctor felis consequat a.
                   Donec quis dolor sem. Sed sollicitudin magna in hendrerit
                   pulvinar. Vestibulum non quam velit.
@@ -135,7 +135,7 @@ const Team = () => {
                     </p>
                   </div>
                 </div>
-                <p className="leading-loose text-blueGray-400 mb-5">
+                <p className="leading-loose text-purpleGray-400 mb-5">
                   Donec consequat tortor risus, at auctor felis consequat a.
                   Donec quis dolor sem. Sed sollicitudin magna in hendrerit
                   pulvinar. Vestibulum non quam velit.
@@ -172,7 +172,7 @@ const Team = () => {
                     <p className="text-gray-500 text-xs mt-3">Direct-Founder</p>
                   </div>
                 </div>
-                <p className="leading-loose text-blueGray-400 mb-5">
+                <p className="leading-loose text-purpleGray-400 mb-5">
                   Donec consequat tortor risus, at auctor felis consequat a.
                   Donec quis dolor sem. Sed sollicitudin magna in hendrerit
                   pulvinar. Vestibulum non quam velit.
@@ -207,7 +207,7 @@ const Team = () => {
         <div className="container text-center">
           <div className="max-w-lg mx-auto mb-12">
             <span
-              className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn animated"
+              className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
               Our Team
@@ -217,10 +217,10 @@ const Team = () => {
               data-wow-delay=".3s"
             >
               Our Awesome <br />
-              <span className="text-blue-500">Creative</span> Team Member
+              <span className="text-purple-500">Creative</span> Team Member
             </h2>
             <p
-              className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn animated"
+              className="text-purpleGray-400 leading-loose wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -394,7 +394,7 @@ const Team = () => {
                 Get in touch!
               </h2>
               <p
-                className="text-blueGray-400 wow animate__animated animate__fadeIn animated"
+                className="text-purpleGray-400 wow animate__animated animate__fadeIn animated"
                 data-wow-delay=".5s"
               >
                 We will be glad to hear from you
@@ -406,7 +406,7 @@ const Team = () => {
                 data-wow-delay=".1s"
               >
                 <svg
-                  className="mb-6 h-8 w-8 mx-auto text-blue-600"
+                  className="mb-6 h-8 w-8 mx-auto text-purple-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -420,7 +420,7 @@ const Team = () => {
                   ></path>
                 </svg>
                 <div className="leading-relaxed">
-                  <span className="text-sm text-blueGray-400">Phone</span>
+                  <span className="text-sm text-purpleGray-400">Phone</span>
                   <p>+ 48 654-430-309</p>
                   <p>+ 1 6532-430-309</p>
                 </div>
@@ -430,7 +430,7 @@ const Team = () => {
                 data-wow-delay=".3s"
               >
                 <svg
-                  className="mb-6 h-8 w-8 mx-auto text-blue-600"
+                  className="mb-6 h-8 w-8 mx-auto text-purple-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -444,7 +444,7 @@ const Team = () => {
                   ></path>
                 </svg>
                 <div className="leading-relaxed">
-                  <span className="text-sm text-blueGray-400">E-mail</span>
+                  <span className="text-sm text-purpleGray-400">E-mail</span>
                   <p>contact@monst.com</p>
                   <p>pat@example.com</p>
                 </div>
@@ -454,7 +454,7 @@ const Team = () => {
                 data-wow-delay=".5s"
               >
                 <svg
-                  className="mb-6 h-8 w-8 mx-auto text-blue-600"
+                  className="mb-6 h-8 w-8 mx-auto text-purple-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -474,7 +474,7 @@ const Team = () => {
                   ></path>
                 </svg>
                 <div className="leading-relaxed">
-                  <span className="text-sm text-blueGray-400">Address</span>
+                  <span className="text-sm text-purpleGray-400">Address</span>
                   <p>11567 E Broadview Dr</p>
                   <p>Colorado(CO), 80117</p>
                 </div>
@@ -514,33 +514,33 @@ const Team = () => {
                   <div className="w-full lg:w-1/2 px-3 mb-4 lg:mb-0">
                     <div className="mb-4">
                       <input
-                        className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                        className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                         type="text"
                         placeholder="Subject"
                       />
                     </div>
                     <div className="mb-4">
                       <input
-                        className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                        className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                         type="text"
                         placeholder="Name"
                       />
                     </div>
                     <div className="mb-4">
                       <input
-                        className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                        className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                         type="email"
                         placeholder="name@example.com"
                       />
                     </div>
                     <div>
-                      <label className="flex px-2 bg-blueGray-50 rounded">
+                      <label className="flex px-2 bg-purpleGray-50 rounded">
                         <input
                           className="hidden"
                           type="file"
                           name="Choose file"
                         />
-                        <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-blueGray-500 hover:bg-blueGray-600 rounded cursor-pointer">
+                        <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-purpleGray-500 hover:bg-purpleGray-600 rounded cursor-pointer">
                           {" "}
                           Browse
                         </span>
@@ -549,7 +549,7 @@ const Team = () => {
                   </div>
                   <div className="w-full lg:w-1/2 px-3">
                     <textarea
-                      className="w-full h-full p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
+                      className="w-full h-full p-4 text-xs font-semibold leading-none resize-none bg-purpleGray-50 rounded outline-none"
                       placeholder="Message..."
                     ></textarea>
                   </div>
@@ -567,7 +567,7 @@ const Team = () => {
                     </span>
                   </label>
                   <button
-                    className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded"
+                    className="py-4 px-8 text-sm text-white font-semibold leading-none bg-purple-400 hover:bg-purple-500 rounded"
                     type="submit"
                   >
                     Submit

@@ -23,7 +23,7 @@
 }
 
 .leave-btn {
-  background-color: blue !important;
+  background-color: purple !important;
 }
 
 .select-box {
@@ -46,8 +46,8 @@
   max-width: 50rem;
 }
 
-.leave-modal{
-  width:45rem;
+.leave-modal {
+  width: 45rem;
 }
 
 .apply-leave-btn {
@@ -82,7 +82,7 @@
   margin-top: -2rem;
   margin-right: 2rem;
   overflow-x: hidden;
-} 
+}
 
 .table-cell-alloted-balance {
   display: flex;

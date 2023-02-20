@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const Portfolio = () => {
   return (
     <>
-      <section className="-mt-24 pt-40 pb-12 bg-blueGray-100">
+      <section className="-mt-24 pt-40 pb-12 bg-purpleGray-100">
         <div className="container text-center">
           <h1 className="text-2xl lg:text-5xl font-bold mb-5 wow animate__animated animate__fadeIn animated">
             Our Portfolioz
           </h1>
           <ul className="mx-auto text-gray-500 text-sm lg:text-sm pb-12 wow animate__animated animate__fadeIn animated">
             <li className="inline-flex items-center">
-              <a href="noreffer" className="hover:text-blue-500 text-gray-800">
+              <a href="noreffer" className="hover:text-purple-500 text-gray-800">
                 Home
               </a>
               <svg
@@ -37,7 +37,7 @@ const Portfolio = () => {
         <div className="container">
           <div className="max-w-lg mx-auto mb-12 text-center">
             <span
-              className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl wow animate__animated animate__fadeIn animated"
+              className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
               Our Projects
@@ -47,10 +47,10 @@ const Portfolio = () => {
               data-wow-delay=".3s"
             >
               Check Out <br />
-              Our <span className="text-blue-500">Latest</span> Project
+              Our <span className="text-purple-500">Latest</span> Project
             </h2>
             <p
-              className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn animated"
+              className="text-purpleGray-400 leading-loose wow animate__animated animate__fadeIn animated"
               data-wow-delay=".5s"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -124,7 +124,7 @@ const Portfolio = () => {
                 <Link href="/blog-single" legacyBehavior>
                   <a
                     href="noreffer"
-                    className="tracking-wide hover-up-2 inline-block px-4 py-3 text-xs font-semibold leading-none bg-blue-400 hover:bg-blue-500 text-white rounded"
+                    className="tracking-wide hover-up-2 inline-block px-4 py-3 text-xs font-semibold leading-none bg-purple-400 hover:bg-purple-500 text-white rounded"
                   >
                     View details
                   </a>
@@ -157,7 +157,7 @@ const Portfolio = () => {
                 <Link href="/blog-single" legacyBehavior>
                   <a
                     href="noreffer"
-                    className="tracking-wide hover-up-2 inline-block px-4 py-3 text-xs font-semibold leading-none bg-blue-400 hover:bg-blue-500 text-white rounded"
+                    className="tracking-wide hover-up-2 inline-block px-4 py-3 text-xs font-semibold leading-none bg-purple-400 hover:bg-purple-500 text-white rounded"
                   >
                     View details
                   </a>
@@ -222,11 +222,11 @@ const Portfolio = () => {
             <h2 className="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading wow animate__animated animate__fadeIn animated">
               <span>Choose Your </span>
               <br />
-              <span className="text-blue-600">Best </span>
+              <span className="text-purple-600">Best </span>
               <span>Pricing Plan</span>
             </h2>
             <p
-              className="max-w-sm mx-auto text-lg text-blueGray-400 wow animate__animated animate__fadeIn animated"
+              className="max-w-sm mx-auto text-lg text-purpleGray-400 wow animate__animated animate__fadeIn animated"
               data-wow-delay=".3s"
             >
               Great Things In Business Are Never Done By One Person
@@ -239,7 +239,7 @@ const Portfolio = () => {
             >
               <input type="radio" name="billing" value="1" />
               <span className="mx-2 font-semibold">Monthly Billing</span>
-              <span className="inline-flex items-center justify-center w-12 h-10 bg-blue-500 text-white font-semibold rounded">
+              <span className="inline-flex items-center justify-center w-12 h-10 bg-purple-500 text-white font-semibold rounded">
                 $59
               </span>
             </label>
@@ -249,7 +249,7 @@ const Portfolio = () => {
             >
               <input type="radio" name="billing" value="2" />
               <span className="mx-2 font-semibold">Annual Billing</span>
-              <span className="inline-flex items-center justify-center w-12 h-10 bg-blue-500 text-white font-semibold rounded">
+              <span className="inline-flex items-center justify-center w-12 h-10 bg-purple-500 text-white font-semibold rounded">
                 $99
               </span>
             </label>
@@ -257,16 +257,16 @@ const Portfolio = () => {
           <div className="flex flex-wrap bg-white rounded shadow wow animate__animated animate__fadeIn animated">
             <div className="w-full md:w-1/2 lg:w-2/5 px-3">
               <div className="p-8 text-center">
-                <span className="text-blueGray-400">Sign In</span>
+                <span className="text-purpleGray-400">Sign In</span>
                 <h4 className="mb-6 text-2xl">Setup your payment</h4>
-                <div className="flex mb-4 px-4 bg-blueGray-100 rounded">
+                <div className="flex mb-4 px-4 bg-purpleGray-100 rounded">
                   <input
-                    className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-100 outline-none"
+                    className="w-full py-4 text-xs placeholder-purpleGray-400 font-semibold leading-none bg-purpleGray-100 outline-none"
                     type="email"
                     placeholder="name@email.com"
                   />
                   <svg
-                    className="h-6 w-6 ml-4 my-auto text-blueGray-300"
+                    className="h-6 w-6 ml-4 my-auto text-purpleGray-300"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -280,15 +280,15 @@ const Portfolio = () => {
                     ></path>
                   </svg>
                 </div>
-                <div className="flex mb-6 px-4 bg-blueGray-100 rounded">
+                <div className="flex mb-6 px-4 bg-purpleGray-100 rounded">
                   <input
-                    className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-100 outline-none"
+                    className="w-full py-4 text-xs placeholder-purpleGray-400 font-semibold leading-none bg-purpleGray-100 outline-none"
                     type="password"
                     placeholder="Enter your password"
                   />
                   <button className="ml-4">
                     <svg
-                      className="h-6 w-6 my-auto text-blueGray-300"
+                      className="h-6 w-6 my-auto text-purpleGray-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -309,7 +309,7 @@ const Portfolio = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="text-left mb-5 text-sm text-blueGray-400">
+                <div className="text-left mb-5 text-sm text-purpleGray-400">
                   <label>
                     <input type="checkbox" name="terms" value="1" />
                     <span className="ml-1">
@@ -317,14 +317,14 @@ const Portfolio = () => {
                     </span>
                   </label>
                 </div>
-                <button className="block w-full p-4 text-center text-xs text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded">
+                <button className="block w-full p-4 text-center text-xs text-white font-semibold leading-none bg-purple-400 hover:bg-purple-500 rounded">
                   Purchase now
                 </button>
               </div>
             </div>
-            <div className="relative w-full md:w-1/2 lg:w-3/5 px-3 bg-blue-500 rounded-r overflow-hidden">
+            <div className="relative w-full md:w-1/2 lg:w-3/5 px-3 bg-purple-500 rounded-r overflow-hidden">
               <div className="max-w-sm px-12 pt-12">
-                <span className="text-xs text-blue-200">
+                <span className="text-xs text-purple-200">
                   Various Analysis Options
                 </span>
                 <h3 className="mb-4 text-4xl font-bold font-heading text-white">
@@ -356,7 +356,7 @@ const Portfolio = () => {
                 Get in touch!
               </h2>
               <p
-                className="text-blueGray-400 wow animate__animated animate__fadeIn animated"
+                className="text-purpleGray-400 wow animate__animated animate__fadeIn animated"
                 data-wow-delay=".5s"
               >
                 We will be glad to hear from you
@@ -368,7 +368,7 @@ const Portfolio = () => {
                 data-wow-delay=".1s"
               >
                 <svg
-                  className="mb-6 h-8 w-8 mx-auto text-blue-600"
+                  className="mb-6 h-8 w-8 mx-auto text-purple-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -382,7 +382,7 @@ const Portfolio = () => {
                   ></path>
                 </svg>
                 <div className="leading-relaxed">
-                  <span className="text-sm text-blueGray-400">Phone</span>
+                  <span className="text-sm text-purpleGray-400">Phone</span>
                   <p>+ 48 654-430-309</p>
                   <p>+ 1 6532-430-309</p>
                 </div>
@@ -392,7 +392,7 @@ const Portfolio = () => {
                 data-wow-delay=".3s"
               >
                 <svg
-                  className="mb-6 h-8 w-8 mx-auto text-blue-600"
+                  className="mb-6 h-8 w-8 mx-auto text-purple-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -406,7 +406,7 @@ const Portfolio = () => {
                   ></path>
                 </svg>
                 <div className="leading-relaxed">
-                  <span className="text-sm text-blueGray-400">E-mail</span>
+                  <span className="text-sm text-purpleGray-400">E-mail</span>
                   <p>contact@monst.com</p>
                   <p>pat@example.com</p>
                 </div>
@@ -416,7 +416,7 @@ const Portfolio = () => {
                 data-wow-delay=".5s"
               >
                 <svg
-                  className="mb-6 h-8 w-8 mx-auto text-blue-600"
+                  className="mb-6 h-8 w-8 mx-auto text-purple-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -436,7 +436,7 @@ const Portfolio = () => {
                   ></path>
                 </svg>
                 <div className="leading-relaxed">
-                  <span className="text-sm text-blueGray-400">Address</span>
+                  <span className="text-sm text-purpleGray-400">Address</span>
                   <p>11567 E Broadview Dr</p>
                   <p>Colorado(CO), 80117</p>
                 </div>
@@ -476,33 +476,33 @@ const Portfolio = () => {
                   <div className="w-full lg:w-1/2 px-3 mb-4 lg:mb-0">
                     <div className="mb-4">
                       <input
-                        className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                        className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                         type="text"
                         placeholder="Subject"
                       />
                     </div>
                     <div className="mb-4">
                       <input
-                        className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                        className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                         type="text"
                         placeholder="Name"
                       />
                     </div>
                     <div className="mb-4">
                       <input
-                        className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                        className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                         type="email"
                         placeholder="name@example.com"
                       />
                     </div>
                     <div>
-                      <label className="flex px-2 bg-blueGray-50 rounded">
+                      <label className="flex px-2 bg-purpleGray-50 rounded">
                         <input
                           className="hidden"
                           type="file"
                           name="Choose file"
                         />
-                        <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-blueGray-500 hover:bg-blueGray-600 rounded cursor-pointer">
+                        <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-purpleGray-500 hover:bg-purpleGray-600 rounded cursor-pointer">
                           {" "}
                           Browse
                         </span>
@@ -511,7 +511,7 @@ const Portfolio = () => {
                   </div>
                   <div className="w-full lg:w-1/2 px-3">
                     <textarea
-                      className="w-full h-full p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
+                      className="w-full h-full p-4 text-xs font-semibold leading-none resize-none bg-purpleGray-50 rounded outline-none"
                       placeholder="Message..."
                     ></textarea>
                   </div>
@@ -529,7 +529,7 @@ const Portfolio = () => {
                     </span>
                   </label>
                   <button
-                    className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded"
+                    className="py-4 px-8 text-sm text-white font-semibold leading-none bg-purple-400 hover:bg-purple-500 rounded"
                     type="submit"
                   >
                     Submit

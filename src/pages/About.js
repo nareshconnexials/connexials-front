@@ -10,7 +10,7 @@ const About = () => {
     <>
       <section className="relative -mt-24 pt-24">
         <div
-          className="hidden lg:block absolute inset-0 w-1/2 ml-auto bg-blueGray-100 z-0"
+          className="hidden lg:block absolute inset-0 w-1/2 ml-auto bg-purpleGray-100 z-0"
           style={{ zIndex: "-1" }}
         ></div>
         <div className="container">
@@ -19,11 +19,11 @@ const About = () => {
               <div className="py-12">
                 <div className="max-w-lg lg:max-w-md mx-auto lg:mx-0 mb-8 text-center lg:text-left">
                   <h2 className="text-3xl lg:text-5xl mb-4 font-bold font-heading wow animate__animatedanimated animate__fadeIn">
-                    Committed to <span className="text-blue-500">People</span>{" "}
+                    Committed to <span className="text-purple-500">People</span>{" "}
                     and the future
                   </h2>
-                  <p className="text-blueGray-400 leading-relaxed wow animate__animatedanimated animate__fadeIn">
-                    We are <strong className="text-blue-500">Monst</strong>, a
+                  <p className="text-purpleGray-400 leading-relaxed wow animate__animatedanimated animate__fadeIn">
+                    We are <strong className="text-purple-500">Monst</strong>, a
                     Creative Design{" "}
                     <span
                       className="typewrite d-inline text-brand"
@@ -31,7 +31,7 @@ const About = () => {
                       data-type='["Web Agency", "Social Marketing" ]'
                     ></span>
                   </p>
-                  <p className="text-blueGray-400 leading-relaxed wow animate__animatedanimated animate__fadeIn mt-3 text-sm">
+                  <p className="text-purpleGray-400 leading-relaxed wow animate__animatedanimated animate__fadeIn mt-3 text-sm">
                     Helping you maximize operations management with digitization
                   </p>
                 </div>
@@ -39,7 +39,7 @@ const About = () => {
                   <Link href="/services" legacyBehavior>
                     <a
                       href="noreffer"
-                      className="tracking-wide hover-up-2 block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded wow animate__animatedanimated animate__fadeIn"
+                      className="tracking-wide hover-up-2 block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-purple-400 hover:bg-purple-500 rounded wow animate__animatedanimated animate__fadeIn"
                     >
                       Our Services
                     </a>
@@ -47,7 +47,7 @@ const About = () => {
                   <Link href="#how-we-work" legacyBehavior>
                     <a
                       href="noreffer"
-                      className="block hover-up-2 sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-white border border-blueGray-200 hover:border-blueGray-300 rounded wow animate__animatedanimated animate__fadeIn"
+                      className="block hover-up-2 sm:inline-block py-4 px-8 text-xs text-purpleGray-500 hover:text-purpleGray-600 text-center font-semibold leading-none bg-white border border-purpleGray-200 hover:border-purpleGray-300 rounded wow animate__animatedanimated animate__fadeIn"
                       data-wow-delay=".3s"
                     >
                       How We Work?
@@ -56,7 +56,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 px-3 lg:bg-blueGray-10 mb-12 lg:mb-0 pb-10">
+            <div className="w-full lg:w-1/2 px-3 lg:bg-purpleGray-10 mb-12 lg:mb-0 pb-10">
               <div className="flex items-center justify-center">
                 <img
                   className="lg:max-w-lg"
@@ -75,7 +75,7 @@ const About = () => {
               className="flex w-1/2 lg:w-auto py-4 wow animate__animatedanimated animate__fadeIn"
               data-wow-delay=".2s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -96,7 +96,7 @@ const About = () => {
                 <span className="sm:text-2xl font-bold font-heading count">
                   <CounterUp count={150} time={3} />
                 </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Annual Partner
                 </p>
               </div>
@@ -105,7 +105,7 @@ const About = () => {
               className="flex w-1/2 lg:w-auto py-4 wow animate__animatedanimated animate__fadeIn"
               data-wow-delay=".4s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -127,7 +127,7 @@ const About = () => {
                   <CounterUp count={58} time={3} />
                 </span>
                 <span className="sm:text-2xl font-bold font-heading"> k </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Completed Projects
                 </p>
               </div>
@@ -136,7 +136,7 @@ const About = () => {
               className="flex w-1/2 lg:w-auto py-4 wow animate__animatedanimated animate__fadeIn"
               data-wow-delay=".6s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -157,7 +157,7 @@ const About = () => {
                 <span className="sm:text-2xl font-bold font-heading count">
                   <CounterUp count={500} time={3} />
                 </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Happy Customers
                 </p>
               </div>
@@ -166,7 +166,7 @@ const About = () => {
               className="flex w-1/2 lg:w-auto py-4 wow animate__animatedanimated animate__fadeIn"
               data-wow-delay=".8s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-24 sm:w-24">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -187,7 +187,7 @@ const About = () => {
                 <span className="sm:text-2xl font-bold font-heading count">
                   <CounterUp count={320} time={3} />
                 </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Research Work
                 </p>
               </div>
@@ -199,15 +199,15 @@ const About = () => {
       <section className="pb-20">
         <div className="container text-center">
           <div className="max-w-lg mx-auto mb-16">
-            <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl">
+            <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl">
               {" "}
               About Our Expert
             </span>
             <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading">
               Entrust Your Project To Our{" "}
-              <span className="text-blue-500"> Specialists </span>
+              <span className="text-purple-500"> Specialists </span>
             </h2>
-            <p className="text-blueGray-400 leading-loose">
+            <p className="text-purpleGray-400 leading-loose">
               Our IT services converge business and technology experts to help
               to manage business categories
             </p>

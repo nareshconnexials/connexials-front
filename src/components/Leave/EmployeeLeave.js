@@ -211,8 +211,8 @@ const EmployeeLeave = () => {
             <InfoCard title="Consumed Leave" value={leave}>
               <RoundIcon
                 icon={ChartsIcon}
-                iconColorClass="text-blue-500 dark:text-blue-100"
-                bgColorClass="bg-blue-100 dark:bg-blue-500"
+                iconColorClass="text-purple-500 dark:text-purple-100"
+                bgColorClass="bg-purple-100 dark:bg-purple-500"
                 className="mr-4"
               />
             </InfoCard>

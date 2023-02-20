@@ -16,7 +16,7 @@ const Blog = () => {
             <li className="inline-flex items-center">
               <a
                 href="noreferrer"
-                className="hover:text-blue-500 text-gray-800"
+                className="hover:text-purple-500 text-gray-800"
               >
                 Home
               </a>
@@ -35,7 +35,7 @@ const Blog = () => {
             <li className="inline-flex items-center">
               <a
                 href="noreferrer"
-                className="hover:text-blue-500 text-gray-800"
+                className="hover:text-purple-500 text-gray-800"
               >
                 Our Services
               </a>
@@ -69,24 +69,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Bussiness
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     Plan Your Project in 2022
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -104,28 +104,28 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <div className="mt-6 text-sm text-blue-400">
-                <p className="mt-6 text-sm text-blue-400">
+              <div className="mt-6 text-sm text-purple-400">
+                <p className="mt-6 text-sm text-purple-400">
                   <Link href="/blog-2" legacyBehavior>
                     <a href="noreferrer">
-                      <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                      <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                         Analytics
                       </span>
                     </a>
                   </Link>
-                  <span className="text-blueGray-400 text-xs">
+                  <span className="text-purpleGray-400 text-xs">
                     24 Jan, 2021
                   </span>
                 </p>
               </div>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     The Next Big Challenge for Content Marketer
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Aenean tempus orci eu est ultrices hendrerit. Fusce suscipit,
                 leo a semper venenatis, felis urna pulvinar nibh, vitae porta
                 erat risus sed mauris. Vestibulum vehicula leo eget libero
@@ -146,24 +146,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Company
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     How to Make Website WCAG Compliant?
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -181,24 +181,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Target
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     The Future of Enterprise API Development
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -216,24 +216,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Layers
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     How To Make Your iOS 13 Compatible?
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -251,24 +251,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Consultancy
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     You have a Great Is Business Idea?
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -286,24 +286,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Analytics
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     Plan Your Project with Your Software
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -321,24 +321,24 @@ const Blog = () => {
                   />
                 </a>
               </Link>
-              <p className="mt-6 text-sm text-blue-400">
+              <p className="mt-6 text-sm text-purple-400">
                 <Link href="/blog-2" legacyBehavior>
                   <a href="noreferrer">
-                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                    <span className="inline-block py-1 px-3 text-xs font-semibold bg-purple-100 text-purple-600 rounded-xl mr-3">
                       Digital
                     </span>
                   </a>
                 </Link>
-                <span className="text-blueGray-400 text-xs">24 Jan, 2021</span>
+                <span className="text-purpleGray-400 text-xs">24 Jan, 2021</span>
               </p>
               <h3 className="my-2 text-2xl font-bold font-heading">
                 <Link href="/blog-single" legacyBehavior>
-                  <a href="noreferrer" className="hover:text-blue-500">
+                  <a href="noreferrer" className="hover:text-purple-500">
                     You have a Great Is Business Idea?
                   </a>
                 </Link>
               </h3>
-              <p className="text-blueGray-400 leading-loose">
+              <p className="text-purpleGray-400 leading-loose">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis.
               </p>
@@ -348,7 +348,7 @@ const Blog = () => {
             <Link href="/blog-2" legacyBehavior>
               <a
                 href="noreferrer"
-                className="hover-up-5 inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded"
+                className="hover-up-5 inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-purple-400 hover:bg-purple-500 rounded"
               >
                 Show all posts
               </a>

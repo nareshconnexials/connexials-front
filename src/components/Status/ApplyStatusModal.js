@@ -269,7 +269,7 @@ const ApplyStatusModal = () => {
                   <div>
                     <span
                       onClick={handleAddMoreTask}
-                      className="bg-blue-500 dark:bg-blue-800 p-2 rounded-lg text-white font-medium cursor-pointer"
+                      className="bg-purple-500 dark:bg-purple-800 p-2 rounded-lg text-white font-medium cursor-pointer"
                     >
                       + ADD MORE TASK
                     </span>

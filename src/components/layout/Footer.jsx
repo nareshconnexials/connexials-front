@@ -24,32 +24,34 @@ const Footer = () => {
               {/* </Link> */}
             </div>
             <div className="w-full lg:w-2/5 px-3 mb-8 lg:mb-0">
-              <p className="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 lg:text-lg text-blueGray-400 leading-relaxed">
+              <p className="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 lg:text-lg text-purpleGray-400 leading-relaxed">
                 Helping you <strong>maximize</strong> operations management with
                 digitization
               </p>
             </div>
             <div className="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
-              <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">
+              <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-purpleGray-800">
                 Office
               </p>
-              <p className="lg:text-lg text-blueGray-400">
+              <p className="lg:text-lg text-purpleGray-400">
                 359 Hidden Valley Road, NY
               </p>
             </div>
             <div className="w-full lg:w-1/5 px-3">
-              <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">
+              <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-purpleGray-800">
                 Contacts
               </p>
-              <p className="lg:text-lg text-blueGray-400">(+01) 234 568</p>
-              <p className="lg:text-lg text-blueGray-400">contact@monst.com</p>
+              <p className="lg:text-lg text-purpleGray-400">(+01) 234 568</p>
+              <p className="lg:text-lg text-purpleGray-400">
+                contact@monst.com
+              </p>
             </div>
           </div>
           <div className="flex flex-col lg:flex-row items-center lg:justify-between">
-            <p className="text-sm text-blueGray-400">
+            <p className="text-sm text-purpleGray-400">
               &copy; 2022. All rights reserved.{" "}
               <a
-                className="text-blue-400"
+                className="text-purple-400"
                 href="https://alithemes.com"
                 target="_blank"
                 rel="noopener noreferrer"

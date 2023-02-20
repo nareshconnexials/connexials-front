@@ -14,7 +14,7 @@ function DesktopSidebar(props) {
       >
         <SidebarContent active={active} />
         <button
-          className="text-white text-2xl rounded-md w-10  h-10 bg-blue-500"
+          className="text-white text-2xl rounded-md w-10  h-10 bg-purple-500 opacity-75 hover:opacity-100"
           onClick={() => {
             setActive(!active);
           }}

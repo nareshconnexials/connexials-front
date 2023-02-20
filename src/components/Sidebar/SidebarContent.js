@@ -48,7 +48,10 @@ function SidebarContent(props) {
             navigate("/add-account");
           }}
         >
-          <Button style={{ display: props.active ? "inline-block" : "none" }}>
+          <Button
+            className="bg-purple-500"
+            style={{ display: props.active ? "inline-block" : "none" }}
+          >
             Add account
             <span className="ml-2" aria-hidden="true">
               +

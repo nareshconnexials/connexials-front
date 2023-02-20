@@ -4,9 +4,9 @@ import Footer from "../components/layout/Footer";
 
 const Services = () => {
   return (
-    <>
+    <div>
       {/* <Layout> */}
-      <section className="-mt-10 pt-20 pb-0 bg-blueGray-100">
+      <section className="-mt-10 pt-20 pb-0 bg-purpleGray-100">
         <div className="container">
           <h1 className="text-2xl lg:text-5xl font-bold mb-5 wow animate__animated animate__fadeIn animated">
             What We Do
@@ -30,7 +30,7 @@ const Services = () => {
               <div className="max-w-md-2">
                 <div className="mb-4">
                   <span
-                    className="text-xs py-1 px-3 text-blue-500 font-semibold bg-blue-50 rounded-xl wow animate__animated animate__fadeInDown"
+                    className="text-xs py-1 px-3 text-purple-500 font-semibold bg-purple-50 rounded-xl wow animate__animated animate__fadeInDown"
                     data-wow-delay=".9s"
                   >
                     Why choose us
@@ -40,12 +40,12 @@ const Services = () => {
                     data-wow-delay=".3s"
                   >
                     We Provide Best <br />
-                    <span className="text-blue-500">Web design </span>services
+                    <span className="text-purple-500">Web design </span>services
                   </h2>
                 </div>
 
                 <p
-                  className="mb-6 leading-loose text-blueGray-400 wow animate__animated animate__fadeIn"
+                  className="mb-6 leading-loose text-purpleGray-400 wow animate__animated animate__fadeIn"
                   data-wow-delay=".1s"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -57,8 +57,8 @@ const Services = () => {
                     className="w-full md:w-1/2 items-start pt-4 pb-8 wow animate__animated animate__fadeIn"
                     data-wow-delay=".2s"
                   >
-                    <div className="w-8 mb-5 text-blue-500">
-                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-blue-500 text-white rounded">
+                    <div className="w-8 mb-5 text-purple-500">
+                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-purple-500 text-white rounded">
                         1
                       </span>
                     </div>
@@ -66,7 +66,7 @@ const Services = () => {
                       <h3 className="mb-2 text-xl font-semibold font-heading">
                         Web design UX/UI
                       </h3>
-                      <p className="text-blueGray-400 leading-loose text-sm">
+                      <p className="text-purpleGray-400 leading-loose text-sm">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Veritatis expedita animi.
                       </p>
@@ -76,16 +76,16 @@ const Services = () => {
                     className="w-full md:w-1/2 items-start py-4 wow animate__animated animate__fadeIn"
                     data-wow-delay=".3s"
                   >
-                    <div className="w-8 mb-5 text-blue-500">
-                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-blue-500 text-white rounded">
+                    <div className="w-8 mb-5 text-purple-500">
+                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-purple-500 text-white rounded">
                         2
                       </span>
                     </div>
                     <div>
                       <h3 className="mb-2 text-xl font-semibold font-heading">
-                        React Develop
+                        React Development
                       </h3>
-                      <p className="text-blueGray-400 leading-loose text-sm">
+                      <p className="text-purpleGray-400 leading-loose text-sm">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Veritatis expedita animi.
                       </p>
@@ -95,8 +95,8 @@ const Services = () => {
                     className="w-full md:w-1/2 items-start py-4 wow animate__animated animate__fadeIn"
                     data-wow-delay=".4s"
                   >
-                    <div className="w-8 mb-5 text-blue-500">
-                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-blue-500 text-white rounded">
+                    <div className="w-8 mb-5 text-purple-500">
+                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-purple-500 text-white rounded">
                         3
                       </span>
                     </div>
@@ -104,7 +104,7 @@ const Services = () => {
                       <h3 className="mb-2 text-xl font-semibold font-heading">
                         Ecommerce Build
                       </h3>
-                      <p className="text-blueGray-400 leading-loose text-sm">
+                      <p className="text-purpleGray-400 leading-loose text-sm">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Veritatis expedita animi.
                       </p>
@@ -114,16 +114,16 @@ const Services = () => {
                     className="w-full md:w-1/2 items-start py-4 wow animate__animated animate__fadeIn"
                     data-wow-delay=".5s"
                   >
-                    <div className="w-8 mb-5 text-blue-500">
-                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-blue-500 text-white rounded">
+                    <div className="w-8 mb-5 text-purple-500">
+                      <span className="inline-block py-2 px-4 mr-4 text-xs font-semibold bg-purple-500 text-white rounded">
                         4
                       </span>
                     </div>
                     <div>
                       <h3 className="mb-2 text-xl font-semibold font-heading">
-                        CMS develop
+                        CMS development
                       </h3>
-                      <p className="text-blueGray-400 leading-loose text-sm">
+                      <p className="text-purpleGray-400 leading-loose text-sm">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Veritatis expedita animi.
                       </p>
@@ -142,7 +142,7 @@ const Services = () => {
               className="hover-up-5 flex w-1/2 lg:w-auto py-4 wow animate__animated animate__fadeIn"
               data-wow-delay=".2s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -163,7 +163,7 @@ const Services = () => {
                 <span className="sm:text-2xl font-bold font-heading count">
                   <CounterUp count={150} time={3} />
                 </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Annual Partner
                 </p>
               </div>
@@ -172,7 +172,7 @@ const Services = () => {
               className="hover-up-5 flex w-1/2 lg:w-auto py-4 wow animate__animated animate__fadeIn"
               data-wow-delay=".4s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -194,7 +194,7 @@ const Services = () => {
                   <CounterUp count={58} time={3} />
                 </span>
                 <span className="sm:text-2xl font-bold font-heading"> k </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Completed Projects
                 </p>
               </div>
@@ -203,7 +203,7 @@ const Services = () => {
               className="hover-up-5 flex w-1/2 lg:w-auto py-4 wow animate__animated animate__fadeIn"
               data-wow-delay=".6s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -224,7 +224,7 @@ const Services = () => {
                 <span className="sm:text-2xl font-bold font-heading count">
                   <CounterUp count={500} time={3} />
                 </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Happy Customers
                 </p>
               </div>
@@ -233,7 +233,7 @@ const Services = () => {
               className="hover-up-5 flex w-1/2 lg:w-auto py-4 wow animate__animated animate__fadeIn"
               data-wow-delay=".8s"
             >
-              <div className="flex justify-center items-center bg-blueGray-50 text-blue-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
+              <div className="flex justify-center items-center bg-purpleGray-50 text-purple-500 rounded-xl h-12 w-12 sm:h-20 sm:w-20">
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -254,7 +254,7 @@ const Services = () => {
                 <span className="sm:text-2xl font-bold font-heading count">
                   <CounterUp count={320} time={3} />
                 </span>
-                <p className="text-xs sm:text-base text-blueGray-400">
+                <p className="text-xs sm:text-base text-purpleGray-400">
                   Research Work
                 </p>
               </div>
@@ -262,19 +262,19 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="pt-20 pb-24 bg-blueGray-50" id="how-we-work">
+      <section className="pt-20 pb-24 bg-purpleGray-50" id="how-we-work">
         <div className="container">
           <div className="flex flex-wrap items-center justify-between max-w-2xl lg:max-w-full mb-12">
             <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
               <h2 className="text-3xl md:text-4xl font-bold font-heading wow animate__animated animate__fadeInDown">
                 <span>We are </span>
-                <span className="text-blue-500">awesome team </span>
+                <span className="text-purple-500">awesome team </span>
                 <br />
                 <span>for your business dream</span>
               </h2>
             </div>
             <div className="w-full lg:w-1/2">
-              <p className="text-blueGray-400 leading-loose wow animate__animated animate__fadeIn">
+              <p className="text-purpleGray-400 leading-loose wow animate__animated animate__fadeIn">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 luctus eget justo et iaculis. Quisque vitae nulla malesuada,
                 auctor arcu vitae, luctus nisi. Sed elementum vitae ligula id
@@ -288,7 +288,7 @@ const Services = () => {
               data-wow-delay=".3s"
             >
               <div className="p-12 bg-white shadow rounded">
-                <div className="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">
+                <div className="flex w-12 h-12 mx-auto items-center justify-center text-purple-800 font-bold font-heading bg-purple-200 rounded-full">
                   1
                 </div>
                 <img
@@ -299,7 +299,7 @@ const Services = () => {
                 <h3 className="mb-2 font-bold font-heading text-xl">
                   Project Initialization
                 </h3>
-                <p className="text-sm text-blueGray-400 leading-relaxed">
+                <p className="text-sm text-purpleGray-400 leading-relaxed">
                   Project initiation ensures that you lay a strong foundation
                   for a new project in your company our team.
                 </p>
@@ -310,7 +310,7 @@ const Services = () => {
               data-wow-delay=".5s"
             >
               <div className="p-12 bg-white shadow rounded">
-                <div className="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">
+                <div className="flex w-12 h-12 mx-auto items-center justify-center text-purple-800 font-bold font-heading bg-purple-200 rounded-full">
                   2
                 </div>
                 <img
@@ -321,7 +321,7 @@ const Services = () => {
                 <h3 className="mb-2 font-bold font-heading text-xl">
                   Project planning
                 </h3>
-                <p className="text-sm text-blueGray-400 leading-relaxed">
+                <p className="text-sm text-purpleGray-400 leading-relaxed">
                   A project plan is essential to keep everything related to the
                   project organized, methodical, and on track.
                 </p>
@@ -332,7 +332,7 @@ const Services = () => {
                 className="p-12 bg-white shadow rounded wow animate__animated animate__fadeIn"
                 data-wow-delay=".7s"
               >
-                <div className="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">
+                <div className="flex w-12 h-12 mx-auto items-center justify-center text-purple-800 font-bold font-heading bg-purple-200 rounded-full">
                   3
                 </div>
                 <img
@@ -343,7 +343,7 @@ const Services = () => {
                 <h3 className="mb-2 font-bold font-heading text-xl">
                   Project organization
                 </h3>
-                <p className="text-sm text-blueGray-400 leading-relaxed">
+                <p className="text-sm text-purpleGray-400 leading-relaxed">
                   Moving forward you will be able to keep yourself and your team
                   on track, and address challenges early.
                 </p>
@@ -358,7 +358,7 @@ const Services = () => {
           <div className="max-w-2xl mx-auto text-center">
             <div className="max-w-md mb-8 mx-auto">
               <span
-                className="text-xs py-1 px-3 text-blue-500 font-semibold bg-blue-50 rounded-xl wow animate__animated animate__fadeInDown"
+                className="text-xs py-1 px-3 text-purple-500 font-semibold bg-purple-50 rounded-xl wow animate__animated animate__fadeInDown"
                 data-wow-delay=".9s"
               >
                 Contact Us
@@ -367,7 +367,7 @@ const Services = () => {
                 className="mt-2 text-4xl font-bold font-heading wow animate__animated animate__fadeIn"
                 data-wow-delay=".3s"
               >
-                We will <span className="text-blue-500">be glad</span> to hear
+                We will <span className="text-purple-500">be glad</span> to hear
                 from you!
               </h2>
             </div>
@@ -403,7 +403,7 @@ const Services = () => {
                   data-wow-delay=".3s"
                 >
                   <input
-                    className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                    className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                     type="text"
                     placeholder="Subject"
                   />
@@ -413,7 +413,7 @@ const Services = () => {
                   data-wow-delay=".3s"
                 >
                   <input
-                    className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                    className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                     type="text"
                     placeholder="Name"
                   />
@@ -423,7 +423,7 @@ const Services = () => {
                   data-wow-delay=".3s"
                 >
                   <input
-                    className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
+                    className="w-full p-4 text-xs font-semibold leading-none bg-purpleGray-50 rounded outline-none"
                     type="email"
                     placeholder="name@example.com"
                   />
@@ -433,7 +433,7 @@ const Services = () => {
                   data-wow-delay=".3s"
                 >
                   <textarea
-                    className="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
+                    className="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-purpleGray-50 rounded outline-none"
                     placeholder="Message..."
                   ></textarea>
                 </div>
@@ -441,9 +441,9 @@ const Services = () => {
                   className="mb-4 wow animate__animated animate__fadeIn"
                   data-wow-delay=".3s"
                 >
-                  <label className="flex px-2 bg-blueGray-50 rounded">
+                  <label className="flex px-2 bg-purpleGray-50 rounded">
                     <input className="hidden" type="file" name="Choose file" />
-                    <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-blueGray-500 hover:bg-blueGray-600 rounded cursor-pointer">
+                    <span className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-purpleGray-500 hover:bg-purpleGray-600 rounded cursor-pointer">
                       {" "}
                       Browse
                     </span>
@@ -465,7 +465,7 @@ const Services = () => {
                     </span>
                   </label>
                   <button
-                    className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-500 hover:bg-blue-700 rounded"
+                    className="py-4 px-8 text-sm text-white font-semibold leading-none bg-purple-500 hover:bg-purple-700 rounded"
                     type="submit"
                   >
                     Submit
@@ -478,7 +478,7 @@ const Services = () => {
       </section>
       <Footer />
       {/* </Layout> */}
-    </>
+    </div>
   );
 };
 
