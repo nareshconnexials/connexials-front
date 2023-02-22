@@ -40,6 +40,7 @@
     "react-scripts": "3.4.1",
     "react-scroll-up": "^1.4.0",
     "react-toastify": "8.2.0",
+    "react-tooltip": "^5.8.1",
     "react-transition-group": "4.4.1",
     "react-typing-effect": "^2.0.5",
     "react-visibility-sensor": "^5.1.1",
