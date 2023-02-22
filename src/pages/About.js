@@ -36,7 +36,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="text-center lg:text-left">
-                  <Link href="/services" legacyBehavior>
+                  <Link to="/home" legacyBehavior>
                     <a
                       href="noreffer"
                       className="tracking-wide hover-up-2 block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-purple-400 hover:bg-purple-500 rounded wow animate__animatedanimated animate__fadeIn"

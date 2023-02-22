@@ -63,7 +63,7 @@ function Home() {
           </div>
           <div>
             <a
-              href="#"
+              href="noreferrer"
               class="inline-block text-sm px-4 py-2 border rounded text-teal  border-white hover:border-transparent hover:text-white hover:bg-teal mt-4 lg:mt-0 bg-cool-gray-500"
             >
               Download

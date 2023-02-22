@@ -8,7 +8,7 @@ function DesktopSidebar(props) {
   return (
     <aside className="z-30 flex-shrink-0 hidden w-[14rem] overflow-y-auto bg-white dark:bg-gray-800 lg:block ">
       <div
-        className={`flex flex-col items-center justify-center sidebar${
+        className={`flex flex-col items-center justify-center overflow-x-hidden sidebar${
           active ? " active" : " inactive"
         }`}
       >
