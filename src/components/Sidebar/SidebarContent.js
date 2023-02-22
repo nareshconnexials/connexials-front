@@ -39,7 +39,7 @@ function SidebarContent(props) {
             <li
               className={`relative px-6 py-3 ${
                 location.pathname === route.path
-                  ? "bg-purple-100 rounded-md"
+                  ? "bg-purple-500 rounded-md"
                   : ""
               }`}
               key={route.name}
@@ -52,7 +52,11 @@ function SidebarContent(props) {
                   <Route loader={<ThemedSuspense />} path={route.path} />
                 </Routes>
                 <Icon
-                  className="w-5 h-5"
+                  className={`w-5 h-5 focus:outline-none ${
+                    location.pathname === route.path
+                      ? "text-white font-bold"
+                      : ""
+                  }`}
                   aria-hidden="true"
                   icon={route.icon}
                   data-tooltip-id="my-tooltip"
@@ -60,7 +64,15 @@ function SidebarContent(props) {
                   data-tooltip-place="right"
                 />
                 {props.active ? (
-                  <span className="ml-4">{route.name}</span>
+                  <span
+                    className={`ml-4 ${
+                      location.pathname === route.path
+                        ? "text-white font-bold"
+                        : ""
+                    }`}
+                  >
+                    {route.name}
+                  </span>
                 ) : null}
               </NavLink>
             </li>
