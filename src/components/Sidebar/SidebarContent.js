@@ -32,14 +32,14 @@ function SidebarContent(props) {
         props.active === true ? "w-full" : ""
       }`}
     >
-      <ul className="mt-6">
+      <ul className="mt-3">
         {routes
           .filter((i) => i.role.includes(isRole))
           .map((route) => (
             <li
               className={`relative px-6 py-3 ${
                 location.pathname === route.path
-                  ? "bg-purple-500 rounded-md"
+                  ? "bg-purple-600 rounded-sm"
                   : ""
               }`}
               key={route.name}
