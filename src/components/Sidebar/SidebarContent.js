@@ -24,8 +24,8 @@ function SidebarContent(props) {
   const isRole = getRole("role");
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(isRole);
 
-  console.log(routes.filter((i) => i.role.includes(isRole)));
   return (
     <div
       className={`py-4 text-gray-500 dark:text-gray-400 ${

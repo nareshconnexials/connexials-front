@@ -31,16 +31,11 @@ const Teams = lazy(() => import("../pages/team.js"));
 const Services = lazy(() => import("../pages/services.js"));
 const Homee = lazy(() => import("../pages/Homee.js"));
 const Blog = lazy(() => import("../pages/blog.js"));
+const Resume = lazy(() => import("../pages/Form"));
 
 export const routes = [
   {
     path: "/",
-    component: Dashboard,
-    protected: true,
-    role: ["admin", "employee"],
-  },
-  {
-    path: "/dashboard",
     component: Dashboard,
     protected: true,
     role: ["admin", "employee"],
@@ -74,12 +69,6 @@ export const routes = [
     component: ForgotPassword,
     protected: false,
     role: ["admin", "employee", "guest"],
-  },
-  {
-    path: "/dashboard",
-    component: Dashboard,
-    protected: true,
-    role: ["admin"],
   },
   {
     path: "/user-list",
@@ -166,26 +155,28 @@ export const routes = [
     role: ["admin", "employee", "guest"],
   },
   {
+    path: "/cv",
+    component: Resume,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
     path: "*",
     component: Page404,
     protected: false,
-    role: ["admin", "empoyee", "guest"],
+    role: ["admin", "employee", "guest"],
   },
-  // {
-  //   name: "Not Found",
-  //   path: "*",
-  //   component: Page404,
-  //   protected: true,
-  //   role: ["admin", "employee"],
-  // },
 ];
 
 function PrivateRoute({ children, route }) {
   const isAuthenticated = getToken("token");
+  const role = getRole();
   return isAuthenticated == null ? (
     <Navigate to="/home" />
-  ) : (
+  ) : route.role.includes(role) ? (
     <Layout route={route}>{children}</Layout>
+  ) : (
+    <Navigate to="/dashboard" />
   );
 }
 

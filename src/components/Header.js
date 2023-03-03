@@ -30,6 +30,7 @@ import {
   sidebarSelector,
   toggleSidebar,
 } from "../redux/slices/Sidebar/sidebarSlice";
+import "./style.css";
 
 function Header() {
   //eslint-disable-next-line
@@ -79,14 +80,14 @@ function Header() {
     <header className="flex z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
       <div className="flex align-center px-10 flex-shrink-0 text-purple-600">
         <button
-          className=" mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
+          className=" mr-5 -ml-1 rounded-md lg:hidden"
           onClick={handleToggleSidebar}
           aria-label="Menu"
         >
           <MenuIcon className="w-6 h-6" aria-hidden="true" />
         </button>
         <Link
-          to={role === "guest" ? "/home" : "/dashboard"}
+          to={role === "guest" ? "/home" : "/"}
           className="inline-block text-3xl text-purple-500"
         >
           Connexial
@@ -160,7 +161,7 @@ function Header() {
               </li>
               <li className="relative">
                 <button
-                  className="rounded-full focus:shadow-outline-purple focus:outline-none"
+                  className="rounded-full focus:shadow-outline-purple"
                   onClick={handleProfileClick}
                   aria-label="Account"
                   aria-haspopup="true"
