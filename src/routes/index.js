@@ -157,8 +157,8 @@ export const routes = [
   {
     path: "/cv",
     component: Resume,
-    protected: false,
-    role: ["admin", "employee", "guest"],
+    protected: true,
+    role: ["admin"],
   },
   {
     path: "*",

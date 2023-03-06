@@ -57,7 +57,7 @@ const routes = [
     path: "/cv",
     icon: "PeopleIcon",
     name: "Resume",
-    role: ["admin", "employee", "guest"],
+    role: ["admin"],
   },
 ];
 
