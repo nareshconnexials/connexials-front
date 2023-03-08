@@ -24,7 +24,6 @@ function SidebarContent(props) {
   const isRole = getRole("role");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(isRole);
 
   return (
     <div
@@ -62,6 +61,7 @@ function SidebarContent(props) {
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={route.name}
                   data-tooltip-place="right"
+                  data-tooltip-delay-show={100}
                 />
                 {props.active ? (
                   <span

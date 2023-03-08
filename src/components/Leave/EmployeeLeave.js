@@ -171,6 +171,7 @@ const EmployeeLeave = () => {
       let updatedData = leaveData.reduce((acc, item) => {
         return acc + Number(item.days);
       }, 0);
+      console.log(updatedData);
       setLeave(updatedData);
     }
   }, [leaveData, page]);
@@ -189,6 +190,8 @@ const EmployeeLeave = () => {
       />
     );
   }
+
+  console.log(leave);
 
   if (isRole === "employee") {
     return (

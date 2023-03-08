@@ -174,7 +174,7 @@ function PrivateRoute({ children, route }) {
   return isAuthenticated == null ? (
     <Navigate to="/home" />
   ) : route.role.includes(role) ? (
-    <Layout route={route}>{children}</Layout>
+    <Layout>{children}</Layout>
   ) : (
     <Navigate to="/dashboard" />
   );
@@ -192,7 +192,7 @@ export default function MainRoutes() {
           {routes.map((route) => (
             <Route
               key={route.path}
-              path={route.path}
+              path={route.path + "/*"}
               element={
                 route.protected ? (
                   <PrivateRoute route={route}>

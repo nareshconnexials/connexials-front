@@ -85,7 +85,7 @@ export const addLeaveData = (data, callback) => async (dispatch) => {
     dispatch(startLoading());
     //eslint-disable-next-line
     const response = await axios.post(
-      "users/holidays",
+      "users/leaves",
       formatLeaveModalData(data),
       {
         headers: {
@@ -130,7 +130,7 @@ export const addLeaveData = (data, callback) => async (dispatch) => {
 export const getUserLeaveData = () => async (dispatch) => {
   try {
     dispatch(startLoading());
-    const response = await axios.get("users/holidays");
+    const response = await axios.get("users/leaves");
 
     dispatch(getUsersLeaveSuccess(formatGetLeaveData(response.data).leaveData));
   } catch (error) {

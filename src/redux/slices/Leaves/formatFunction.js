@@ -19,7 +19,6 @@ export const formatLeaveModalData = (data) => {
 };
 
 export const formatGetLeaveData = (data) => {
-  
   const formatLeaveData = {
     leaveData: data.map(
       ({
@@ -62,7 +61,7 @@ export const formatGetLeaveDataById = (data) => {
     reason,
   } = data;
   const formatLeaveDataById = {
-    id:id,
+    id: id,
     userId: getUserId(),
     fromDate: from_date,
     toDate: to_date,
