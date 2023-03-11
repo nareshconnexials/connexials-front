@@ -1,0 +1,15 @@
+.sidebar.active {
+  width: 10vw;
+  transition: all 0.3s;
+}
+.sidebar.inactive {
+  width: 60px;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 1500px) {
+  .sidebar.active {
+    width: 14vw;
+    transition: all 0.3s;
+  }
+}

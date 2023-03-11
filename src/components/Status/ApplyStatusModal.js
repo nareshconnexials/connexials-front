@@ -13,16 +13,11 @@ const ApplyStatusModal = () => {
     toEmail: "",
     statusDate: "",
     billingHours: "",
-    projectType: "",
-    workingHours: "",
-    statusType: "",
-    task: "",
   };
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [countTask, setCountTask] = useState(0);
-  const [deleteTaskField, setDeleteTaskField] = useState([<></>]);
   const [addMoreTaskField, setAddMoreTaskField] = useState([
     <TaskFields countKey={countTask} />,
   ]);
@@ -30,11 +25,24 @@ const ApplyStatusModal = () => {
   const formik = useFormik({
     initialValues: statusFields,
     validationSchema: createStatusModalSchema,
-    validateOnMount: false,
+    // validateOnMount: false,
     onSubmit: (values) => {
+      console.log(values);
       handleSubmit(values);
     },
   });
+  const handleAddMoreTask = () => {
+    setCountTask(countTask + 1);
+    setAddMoreTaskField([
+      ...addMoreTaskField,
+      <TaskFields countKey={countTask} />,
+    ]);
+  };
+
+  const handleDeleteTaskFields = (count) => {
+    const updatedData = addMoreTaskField.filter((e, index) => index !== count);
+    setAddMoreTaskField([...addMoreTaskField, updatedData]);
+  };
 
   function TaskFields(props) {
     return (
@@ -71,9 +79,10 @@ const ApplyStatusModal = () => {
                   ? "shadow-sm shadow-red-400 transition-shadow"
                   : ""
               } `}
+              type="text"
               name="workingHours"
               onChange={formik.handleChange}
-              value={formik.values.workingHours}
+              // value={formik.values.workingHours}
             />
             <span className="text-sm text-red-600">
               {" "}
@@ -125,12 +134,11 @@ const ApplyStatusModal = () => {
               </span>
             </Label>
           </div>
-          <span className="w-12 flex justify-end mt-10">
-            <FaTrashAlt
-              className="text-red-600 cursor-pointer"
-              onClick={handleDeleteTaskFields}
-            />
-          </span>
+          <div onClick={() => handleDeleteTaskFields(countTask)}>
+            <span className="w-12 flex justify-end mt-10">
+              <FaTrashAlt className="text-red-600 cursor-pointer" />
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -144,28 +152,6 @@ const ApplyStatusModal = () => {
     );
   };
 
-  const handleAddMoreTask = () => {
-    console.log(countTask);
-    setAddMoreTaskField([
-      ...addMoreTaskField,
-      <TaskFields countKey={countTask} />,
-    ]);
-    setCountTask(countTask + 1);
-  };
-
-  const handleDeleteTaskFields = () => {
-    // setDeleteTaskField(
-    // addMoreTaskField.filter((value) => {
-    //   console.log(value.props.countKey, countTask);
-    //   return value.props.countKey === countTask ? value : <></>;
-    // });
-    addMoreTaskField.findIndex((v)=>{
-      console.log(v.props);
-      return (v.props)
-    })
-    // );
-  };
-
   return (
     <>
       <div className="apply-status-container flex items-center p-6 my-[5rem] bg-gray-50 dark:bg-gray-900">
@@ -174,6 +160,7 @@ const ApplyStatusModal = () => {
             <h1 className="apply-title flex items-center mb-1 mt-1 pl-2 w-full h-12 text-3xl font-semibold text-gray-600 dark:text-gray-300">
               Send Daily Status Update
             </h1>
+            Please Find My Status Update:
             <div className="flex mt-2 px-2 w-full justify-between">
               <SectionTitle>Do want change your availability?</SectionTitle>
               <div className="w-32 flex">
@@ -270,109 +257,6 @@ const ApplyStatusModal = () => {
                     {/* <span className="font-medium cursor-pointer text-gray-600 dark:text-gray-300">
                       + ADD YOUR TASK DETAILS
                     </span> */}
-                    <div className="border">
-                      <div className="flex w-full  bg-gray-50 dark:bg-gray-800 p-5 justify-between">
-                        <Label className="block text-sm text-gray-700 dark:text-gray-400 label w-56">
-                          <span className="font-medium text-gray-600 dark:text-gray-300">
-                            Project
-                          </span>
-                          <Select
-                            className={`select-box mt-1 py-[5px] cursor-pointer `}
-                            name="projectType"
-                            onChange={formik.handleChange}
-                            defaultValue={formik.values.projectType}
-                          >
-                            <option value="" disabled selected hidden>
-                              Select Project
-                            </option>
-                            <option value="UPilot">UPilot</option>
-                          </Select>
-                          <span className="text-sm text-red-600">
-                            {" "}
-                            {formik.errors.projectType
-                              ? formik.errors.projectType
-                              : null}
-                          </span>
-                        </Label>
-
-                        <Label className="block text-sm text-gray-700 dark:text-gray-400 label w-56">
-                          <span className="font-medium text-gray-600 dark:text-gray-300">
-                            Working Hours
-                          </span>
-                          <Input
-                            className={`select-box mt-1 py-[5px] ${
-                              formik.errors.workingHours
-                                ? "shadow-sm shadow-red-400 transition-shadow"
-                                : ""
-                            } `}
-                            name="workingHours"
-                            onChange={formik.handleChange}
-                            value={formik.values.workingHours}
-                          />
-                          <span className="text-sm text-red-600">
-                            {" "}
-                            {formik.errors.workingHours
-                              ? formik.errors.workingHours
-                              : null}
-                          </span>
-                        </Label>
-
-                        <Label className="block text-sm text-gray-700 dark:text-gray-400 label w-56">
-                          <span className="font-medium text-gray-600 dark:text-gray-300">
-                            Status
-                          </span>
-                          <Select
-                            className={`select-box mt-1 py-[5px] cursor-pointer `}
-                            name="statusType"
-                            onChange={formik.handleChange}
-                            defaultValue={formik.values.statusType}
-                          >
-                            <option value="" disabled selected hidden>
-                              Select Status
-                            </option>
-                            <option value="status">Status</option>
-                          </Select>
-                          <span className="text-sm text-red-600">
-                            {" "}
-                            {formik.errors.statusType
-                              ? formik.errors.statusType
-                              : null}
-                          </span>
-                        </Label>
-                      </div>
-                      <div className="flex w-full bg-gray-50 dark:bg-gray-800 p-5">
-                        <div className="flex w-full">
-                          <Label className="flex flex-col text-sm text-gray-700 dark:text-gray-400 w-full label">
-                            <span className="font-medium my-2">Task</span>
-                            <Textarea
-                              name="task"
-                              cols="40"
-                              rows="5"
-                              onChange={formik.handleChange}
-                              value={formik.values.task}
-                              className={`${
-                                formik.errors.task
-                                  ? "shadow-sm shadow-red-400 transition-shadow"
-                                  : ""
-                              }`}
-                            />
-                            <span className="text-sm text-red-600">
-                              {" "}
-                              {formik.errors.reason
-                                ? formik.errors.reason
-                                : null}
-                              {formik.errors.task ? formik.errors.task : null}
-                            </span>
-                          </Label>
-                        </div>
-                        <span
-                          className="w-12 flex justify-end mt-10"
-                          onClick={handleDeleteTaskFields}
-                        >
-                          <FaTrashAlt className="text-red-600 cursor-pointer" />
-                        </span>
-                      </div>
-                    </div>
                     {addMoreTaskField &&
                       addMoreTaskField?.map((fields, i) => {
                         return (
@@ -381,22 +265,11 @@ const ApplyStatusModal = () => {
                           </>
                         );
                       })}
-
-                    {/* {<div>{deleteTaskField}</div>} */}
-
-                    {/* {deleteTaskField &&
-                      deleteTaskField.map((deletedFields, i) => {
-                        return (
-                          <>
-                            <div key={i}>{deletedFields}</div>
-                          </>
-                        );
-                      })} */}
                   </div>
                   <div>
                     <span
                       onClick={handleAddMoreTask}
-                      className="bg-blue-500 dark:bg-blue-800 p-2 rounded-lg text-white font-medium cursor-pointer"
+                      className="bg-purple-500 dark:bg-purple-800 p-2 rounded-lg text-white font-medium cursor-pointer"
                     >
                       + ADD MORE TASK
                     </span>
@@ -404,7 +277,6 @@ const ApplyStatusModal = () => {
 
                   <div className="flex w-full justify-between mt-10">
                     <button
-                      type="submit"
                       onClick={() => {
                         navigate("/status");
                       }}

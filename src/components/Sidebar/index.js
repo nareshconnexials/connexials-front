@@ -1,14 +1,8 @@
-import React from 'react'
-import DesktopSidebar from './DesktopSidebar'
-import MobileSidebar from './MobileSidebar'
+import React from "react";
+import DesktopSidebar from "./DesktopSidebar";
 
 function Sidebar() {
-  return (
-    <>
-      <DesktopSidebar />
-      <MobileSidebar />
-    </>
-  )
+  return <DesktopSidebar />;
 }
 
-export default Sidebar
+export default Sidebar;

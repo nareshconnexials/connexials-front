@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import InfoCard from "../components/Cards/InfoCard";
+//eslint-disable-next-line
 import ChartCard from "../components/Chart/ChartCard";
+//eslint-disable-next-line
 import { Doughnut, Line } from "react-chartjs-2";
+//eslint-disable-next-line
 import ChartLegend from "../components/Chart/ChartLegend";
 import PageTitle from "../components/Typography/PageTitle";
+//eslint-disable-next-line
 import { ChatIcon, CartIcon, MoneyIcon, PeopleIcon, BellIcon } from "../icons";
 import RoundIcon from "../components/RoundIcon";
 // import response from '../utils/demo/tableData'
@@ -15,11 +19,14 @@ import {
   TableHeader,
   TableCell,
   TableRow,
+  //eslint-disable-next-line
   TableFooter,
   Avatar,
   Badge,
+  //eslint-disable-next-line
   Pagination,
 } from "@windmill/react-ui";
+//eslint-disable-next-line
 import Profile from "../pages/Profile";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -31,7 +38,6 @@ import { getRole, getUserId } from "../helpers/Utils";
 
 function Dashboard() {
   const [page, setPage] = useState(1);
-  const [data, setData] = useState([]);
   const { profile, usersData } = useSelector(usersSelector);
   const dispatch = useDispatch();
   const userId = getUserId();
@@ -45,10 +51,10 @@ function Dashboard() {
   }, [dispatch, userId]);
 
   // pagination setup
-  const resultsPerPage = 10;
   // const totalResults = response.length
 
   // pagination change control
+  //eslint-disable-next-line
   function onPageChange(p) {
     setPage(p);
   }
@@ -89,8 +95,8 @@ function Dashboard() {
               <InfoCard title="Leave" value="3">
                 <RoundIcon
                   icon={CartIcon}
-                  iconColorClass="text-blue-500 dark:text-blue-100"
-                  bgColorClass="bg-blue-100 dark:bg-blue-500"
+                  iconColorClass="text-purple-500 dark:text-purple-100"
+                  bgColorClass="bg-purple-100 dark:bg-purple-500"
                   className="mr-4"
                 />
               </InfoCard>

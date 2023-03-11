@@ -14,58 +14,53 @@ import { getRole } from "../helpers/Utils";
 import moment from "moment/moment";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addEmployeeAttendanceData,
   attendanceSelector,
-  getEmployeeAttendanceData,
+  addEmployeeAttendanceData,
 } from "../redux/slices/Attendance/attendanceSlice";
+import { getUserId } from "../helpers/Utils";
 
 const Attendance = () => {
   const isRole = getRole();
+  const dispatch = useDispatch();
+
   const [digitalTime, setDigitalTime] = useState("");
-  const [checkInOutTime, setCheckInOutTime] = useState({});
+  const [dataTable, setDataTable] = useState([]);
+  const [checkInOutAttendance, setCheckInOutAttendance] = useState({
+    checkIn: "",
+    checkOut: "",
+  });
   const [currentDay, setCurrentDay] = useState("");
   const [currentDate, setCurrentDate] = useState("");
   const [workingHours, setWorkingHours] = useState("");
   const [checkInDisabled, setCheckInDisabled] = useState(false);
   const [checkOutDisabled, setCheckOutDisabled] = useState(true);
   const [page, setPage] = useState(1);
-  const resultsPerPage = 5;
+  const resultsPerPage = 8;
 
-  const dispatch = useDispatch();
   const { attendanceData } = useSelector(attendanceSelector);
 
   useEffect(() => {
-    let timer = setInterval(() => {
-      setDigitalTime(moment().format("LTS"));
-    }, 200);
+    let timer = setInterval(async () => {
+      let mainTime = await moment().format("LTS");
+      setDigitalTime(mainTime);
+      setCurrentDate(moment(new Date()).format("DD/MM/YYYY"));
+
+      setCurrentDay(moment(new Date()).format("dddd"));
+    }, 10);
 
     return () => {
       clearInterval(timer);
     };
   }, []);
 
-  const handleInOutAttendance = (checkInOut) => {
-    moment.locale("fr");
-    setCurrentDate(moment().format("DD/MM/YYYY"));
-    setCurrentDay(moment(new Date()).format("dddd"));
-    if (checkInOut) {
-      setCheckInOutTime({
-        ...checkInOutTime,
-        [checkInOut]: moment().format("LTS"),
-      });
-    }
-  };
-
   useEffect(() => {
-    const earlierDateTime = `${currentDate} ${checkInOutTime.checkIn}`;
-    const laterDateTime = `${currentDate} ${checkInOutTime.checkOut}`;
+    const earlierDateTime = `${currentDate} ${checkInOutAttendance?.checkIn}`;
+    const laterDateTime = `${currentDate} ${checkInOutAttendance?.checkOut}`;
     const difference = moment(laterDateTime, "DD/MM/YYYY h:mm:ss").diff(
       moment(earlierDateTime, "DD/MM/YYYY h:mm:ss")
     );
     const diffHours = moment.utc(difference).format("H");
-    if (diffHours === "Invalid date") {
-      setWorkingHours("");
-    } else {
+    if (diffHours !== "Invalid date") {
       if (moment(earlierDateTime).isBefore(laterDateTime)) {
         setWorkingHours(diffHours);
       }
@@ -73,39 +68,61 @@ const Attendance = () => {
 
     const second = moment.duration(difference);
 
-    // if (
-    //   second?._isValid &&
-    //   moment().format("ss") &&
-    //   checkInDisabled === false &&
-    //   checkOutDisabled === true
-    // ) {
-    //   setCheckInDisabled(true);
-    //   setCheckOutDisabled(false);
-    // } else {
-    //   setCheckInDisabled(false);
-    //   setCheckOutDisabled(true);
-    // }
-  }, [checkInOutTime, currentDate]);
+    if (
+      second?._isValid &&
+      moment().format("ss") &&
+      checkInDisabled === false &&
+      checkOutDisabled === true
+    ) {
+      setCheckInDisabled(true);
+      setCheckOutDisabled(false);
+    } else {
+      setCheckInDisabled(false);
+      setCheckOutDisabled(true);
+    }
+    //eslint-disable-next-line
+  }, [checkInOutAttendance.checkIn, checkInOutAttendance.checkOut]);
+
+  const handleInOutAttendance = (checkInOut) => {
+    if (checkInOut === "checkIn") {
+      setCheckInOutAttendance({
+        ...checkInOutAttendance,
+        checkIn: digitalTime,
+      });
+
+      dispatch(
+        addEmployeeAttendanceData({
+          checkIn: digitalTime,
+          day: currentDay,
+          date: currentDate,
+          workingHours: workingHours,
+        })
+      );
+    } else {
+      setCheckInOutAttendance({
+        ...checkInOutAttendance,
+        checkOut: digitalTime,
+      });
+      dispatch(
+        addEmployeeAttendanceData({
+          checkOut: digitalTime,
+          day: currentDay,
+          date: currentDate,
+          workingHours: workingHours,
+        })
+      );
+    }
+  };
 
   useEffect(() => {
-    dispatch(
-      addEmployeeAttendanceData(
-        checkInOutTime,
-        currentDay,
-        currentDate,
-        workingHours
-      )
+    setDataTable(
+      attendanceData.slice((page - 1) * resultsPerPage, page * resultsPerPage)
     );
-  }, [checkInOutTime]);
+  }, [page, attendanceData]);
 
   const handleChangePage = (p) => {
     setPage(p);
   };
-
-  useEffect(() => {
-    console.log("attendanceData length", attendanceData.length);
-    console.log("attendanceData ", attendanceData);
-  }, [page, attendanceData]);
 
   return (
     <>
@@ -130,7 +147,7 @@ const Attendance = () => {
                     onClick={() => handleInOutAttendance("checkIn")}
                     className="my-4 mx-2 text-lg px-6 rounded-md tracking-wide text-center font-semibold text-gray-600
                 dark:text-white bg-green-300 dark:bg-green-500 hover:bg-green-400 transition"
-                    // disabled={checkInDisabled}
+                    disabled={checkInDisabled}
                   >
                     IN
                   </button>
@@ -138,7 +155,7 @@ const Attendance = () => {
                     onClick={() => handleInOutAttendance("checkOut")}
                     className="my-4 mx-2 text-lg px-6 rounded-md tracking-wide text-center font-semibold text-gray-600
                 dark:text-white bg-orange-300 dark:bg-orange-500 hover:bg-orange-400 transition"
-                    // disabled={checkOutDisabled}
+                    disabled={checkOutDisabled}
                   >
                     OUT
                   </button>
@@ -158,12 +175,16 @@ const Attendance = () => {
               </tr>
             </TableHeader>
             <TableBody>
-              {attendanceData.length === 1 ? (
-                <TableCell>
-                  <span className="text-sm text-center">No Data Found</span>
-                </TableCell>
+              {attendanceData.length === 0 ? (
+                <TableRow>
+                  <TableCell>
+                    <span className="text-sm text-center">No Data Found</span>
+                  </TableCell>
+                </TableRow>
               ) : (
-                attendanceData.map((value, index) => {
+                getUserId() &&
+                dataTable &&
+                dataTable?.map((value, index) => {
                   return (
                     <TableRow key={index}>
                       <TableCell>
@@ -174,16 +195,20 @@ const Attendance = () => {
                       </TableCell>
                       <TableCell>
                         <span className="text-sm">
-                          {value.checkInOut?.checkIn}
+                          {value?.checkIn === undefined ? "-" : value?.checkIn}
                         </span>
                       </TableCell>
                       <TableCell>
                         <span className="text-sm">
-                          {value.checkInOut?.checkOut}
+                          {value?.checkOut === undefined
+                            ? "-"
+                            : value?.checkOut}
                         </span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm">{value?.workingHours}</span>
+                        <span className="text-sm">
+                          {value?.checkOut && workingHours}
+                        </span>
                       </TableCell>
                     </TableRow>
                   );
@@ -193,7 +218,7 @@ const Attendance = () => {
           </Table>
           <TableFooter>
             <Pagination
-              totalResults={attendanceData === 1 ? attendanceData.length : 1}
+              totalResults={attendanceData.length}
               resultsPerPage={resultsPerPage}
               onChange={handleChangePage}
               label="Table navigation"

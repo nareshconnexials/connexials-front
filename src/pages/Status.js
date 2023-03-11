@@ -21,6 +21,7 @@ import { statusSelector } from "../redux/slices/Status/statusSlice";
 
 const Status = () => {
   const isRole = getRole();
+  //eslint-disable-next-line
   const [page, setPage] = useState(1);
   const { dailyStatus } = useSelector(statusSelector);
   const navigate = useNavigate();

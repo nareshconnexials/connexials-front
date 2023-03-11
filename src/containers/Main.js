@@ -2,10 +2,8 @@ import React from "react";
 
 function Main({ children }) {
   return (
-    <main className="h-full overflow-y-auto">
-      <div className="container grid px-6 mx-auto">
-        {children}
-      </div>
+    <main className="overflow-y-auto w-full flex-1">
+      <div className="container grid px-6 mx-auto ">{children}</div>
     </main>
   );
 }

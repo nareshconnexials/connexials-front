@@ -23,6 +23,7 @@ const LeaveModal = ({ handleBack, isModalOpen, setIsModalOpen }) => {
   const formik = useFormik({
     initialValues: leaveFieldsObj,
     validationSchema: createLeaveModalSchema,
+
     onSubmit: (values) => {
       handleSubmit(values);
     },
@@ -44,6 +45,7 @@ const LeaveModal = ({ handleBack, isModalOpen, setIsModalOpen }) => {
 
   const handleSubmit = (value) => {
     dispatch(addLeaveData(value, setIsModalOpen(false)));
+    console.log(value);
   };
 
   if (isModalOpen === true) {
@@ -209,6 +211,7 @@ const LeaveModal = ({ handleBack, isModalOpen, setIsModalOpen }) => {
                         </span>
                       </Label>
                     </div>
+
                     <div className="flex w-full justify-start">
                       <Button
                         type="submit"

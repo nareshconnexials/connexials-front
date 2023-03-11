@@ -6,6 +6,7 @@ import {
   formatGetLeaveDataById,
   formatLeaveModalData,
 } from "./formatFunction";
+import { getToken } from "../../../helpers/Utils";
 
 export const leavesSlice = createSlice({
   name: "leaves",
@@ -82,27 +83,31 @@ export default leavesSlice.reducer;
 export const addLeaveData = (data, callback) => async (dispatch) => {
   try {
     dispatch(startLoading());
+    //eslint-disable-next-line
     const response = await axios.post(
       "users/leaves",
-      formatLeaveModalData(data)
+      formatLeaveModalData(data),
+      {
+        headers: {
+          Authorization: `Bearer Token ${getToken()}`,
+          "Content-Type": "application/json",
+        },
+      }
     );
-
-    if (response.data.message === "Leave created successfully") {
-      dispatch(addUsersLeaveSuccess(data));
-      const message = "Leave Applied";
-      toast(message, {
-        position: "top-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        type: "success",
-      });
-      if (callback) callback();
-    }
+    dispatch(addUsersLeaveSuccess(data));
+    const message = "Leave Applied";
+    toast(message, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      type: "success",
+    });
+    if (callback) callback();
   } catch (error) {
     dispatch(addUsersLeaveFailure());
     if (error) {
@@ -126,6 +131,7 @@ export const getUserLeaveData = () => async (dispatch) => {
   try {
     dispatch(startLoading());
     const response = await axios.get("users/leaves");
+
     dispatch(getUsersLeaveSuccess(formatGetLeaveData(response.data).leaveData));
   } catch (error) {
     dispatch(getUsersLeaveFailure());

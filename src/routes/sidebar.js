@@ -1,6 +1,6 @@
 const routes = [
   {
-    path: "/dashboard",
+    path: "/",
     icon: "HomeIcon",
     name: "Dashboard",
     role: ["admin", "employee"],
@@ -33,7 +33,31 @@ const routes = [
     path: "/attendance",
     icon: "PeopleIcon",
     name: "Attendance",
-    role: ["admin", "employee"],
+    role: ["employee"],
+  },
+  {
+    path: "/home",
+    icon: "PeopleIcon",
+    name: "Home",
+    role: ["guest"],
+  },
+  {
+    path: "/teams",
+    icon: "PeopleIcon",
+    name: "Teams",
+    role: ["guest"],
+  },
+  {
+    path: "/about",
+    icon: "PeopleIcon",
+    name: "About",
+    role: ["guest"],
+  },
+  {
+    path: "/cv",
+    icon: "PeopleIcon",
+    name: "Resume",
+    role: ["admin"],
   },
 ];
 

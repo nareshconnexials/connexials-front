@@ -128,6 +128,7 @@ export const loginUser = (data, callback) => async (dispatch) => {
         type: "success",
       });
       dispatch(getAccountSuccess(response.data));
+
       if (callback) callback();
     }
   } catch (error) {
@@ -171,6 +172,7 @@ export const logOutUser = (callback) => async (dispatch) => {
     clearToken("token");
     clearUserId("user-id");
     clearRole("role");
+    setRole("guest");
     if (callback) callback();
   } catch (error) {
     dispatch(getAccountFailure(""));

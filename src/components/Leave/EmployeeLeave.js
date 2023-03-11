@@ -132,7 +132,7 @@ const allotedBalanceArr = [
 
 const EmployeeLeave = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [leave, setLeave] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -143,13 +143,19 @@ const EmployeeLeave = () => {
 
   const [page, setPage] = useState(1);
   const [dataTable, setDataTable] = useState([]);
-  const resultsPerPage = 12;
+  const resultsPerPage = 10;
+
+  console.log("leaveData", leaveData);
 
   useEffect(() => {
     dispatch(getUserLeaveData());
+    console.log("leaveData", leaveData);
+
     if (userId) {
       dispatch(getUserProfileData(userId));
     }
+    console.log("profile", profile);
+    // eslint-disable-next-line
   }, [dispatch, userId]);
 
   const handleChangePage = (p) => {
@@ -158,8 +164,16 @@ const EmployeeLeave = () => {
 
   useEffect(() => {
     setDataTable(
-      leaveData.slice((page - 1) * resultsPerPage, page * resultsPerPage)
+      leaveData?.slice((page - 1) * resultsPerPage, page * resultsPerPage)
     );
+
+    if (leaveData.length > 0) {
+      let updatedData = leaveData.reduce((acc, item) => {
+        return acc + Number(item.days);
+      }, 0);
+      console.log(updatedData);
+      setLeave(updatedData);
+    }
   }, [leaveData, page]);
 
   const handleBack = () => {
@@ -176,6 +190,8 @@ const EmployeeLeave = () => {
       />
     );
   }
+
+  console.log(leave);
 
   if (isRole === "employee") {
     return (
@@ -195,16 +211,16 @@ const EmployeeLeave = () => {
               />
             </InfoCard>
 
-            <InfoCard title="Consumed Leave" value={"3"}>
+            <InfoCard title="Consumed Leave" value={leave}>
               <RoundIcon
                 icon={ChartsIcon}
-                iconColorClass="text-blue-500 dark:text-blue-100"
-                bgColorClass="bg-blue-100 dark:bg-blue-500"
+                iconColorClass="text-purple-500 dark:text-purple-100"
+                bgColorClass="bg-purple-100 dark:bg-purple-500"
                 className="mr-4"
               />
             </InfoCard>
 
-            <InfoCard title="Balance Leave" value={"27"}>
+            <InfoCard title="Balance Leave" value={30 - leave}>
               <RoundIcon
                 icon={MoneyIcon}
                 iconColorClass="text-green-500 dark:text-green-100"
@@ -269,6 +285,7 @@ const EmployeeLeave = () => {
                 ))}
               </TableBody>
             </Table>
+            Consumed Leave
           </TableContainer>
 
           {/* All Leaves of USER  */}
@@ -327,7 +344,7 @@ const EmployeeLeave = () => {
             </Table>
             <TableFooter>
               <Pagination
-                totalResults={dataTable.length}
+                totalResults={leaveData.length}
                 resultsPerPage={resultsPerPage}
                 onChange={handleChangePage}
                 label="Table navigation"

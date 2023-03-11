@@ -6,6 +6,7 @@ import {
   Routes,
 } from "react-router-dom";
 import ThemedSuspense from "../components/ThemedSuspense";
+//eslint-disable-next-line
 import { getRole, getToken } from "../helpers/Utils";
 
 const Login = lazy(() => import("../pages/Login"));
@@ -25,6 +26,12 @@ const UserLeave = lazy(() => import("../pages/UserLeave"));
 const ApplyStatus = lazy(() => import("../pages/ApplyStatus"));
 const StatusUpdate = lazy(() => import("../pages/StatusUpdate"));
 const Attendance = lazy(() => import("../pages/Attendance"));
+const About = lazy(() => import("../pages/About"));
+const Teams = lazy(() => import("../pages/team.js"));
+const Services = lazy(() => import("../pages/services.js"));
+const Homee = lazy(() => import("../pages/Homee.js"));
+const Blog = lazy(() => import("../pages/blog.js"));
+const Resume = lazy(() => import("../pages/Form"));
 
 export const routes = [
   {
@@ -34,28 +41,34 @@ export const routes = [
     role: ["admin", "employee"],
   },
   {
+    path: "/home",
+    component: Services,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/about",
+    component: About,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
     path: "/login",
     component: Login,
     protected: false,
-    role: ["admin", "employee"],
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/signup",
     component: SignUp,
     protected: false,
-    role: ["admin", "employee"],
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/forgot-password",
     component: ForgotPassword,
     protected: false,
-    role: ["admin", "employee"],
-  },
-  {
-    path: "/dashboard",
-    component: Dashboard,
-    protected: true,
-    role: ["admin"],
+    role: ["admin", "employee", "guest"],
   },
   {
     path: "/user-list",
@@ -124,53 +137,75 @@ export const routes = [
     role: ["admin", "employee"],
   },
   {
-    name: "Not Found",
+    path: "/teams",
+    component: Teams,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/homee",
+    component: Homee,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/blog",
+    component: Blog,
+    protected: false,
+    role: ["admin", "employee", "guest"],
+  },
+  {
+    path: "/cv",
+    component: Resume,
+    protected: true,
+    role: ["admin"],
+  },
+  {
     path: "*",
     component: Page404,
-    protected: true,
-    role: ["admin", "employee"],
+    protected: false,
+    role: ["admin", "employee", "guest"],
   },
 ];
 
 function PrivateRoute({ children, route }) {
   const isAuthenticated = getToken("token");
-  return isAuthenticated ? (
-    <Layout route={route}>{children}</Layout>
+  const role = getRole();
+  return isAuthenticated == null ? (
+    <Navigate to="/home" />
+  ) : route.role.includes(role) ? (
+    <Layout>{children}</Layout>
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/dashboard" />
   );
 }
 
 function PublicRoutes({ children, route: { path } }) {
-  const isAuthenticated = getToken("token");
-  return isAuthenticated ? <Navigate to="/" replace /> : children;
+  return <Layout route={path}>{children}</Layout>;
 }
 
 export default function MainRoutes() {
-  const role = "admin";
   return (
     <Router>
       <Suspense fallback={<ThemedSuspense />}>
         <Routes>
-          {routes
-            .filter((route) => route.role.includes(role))
-            .map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={
-                  route.protected ? (
-                    <PrivateRoute route={route}>
-                      <route.component />
-                    </PrivateRoute>
-                  ) : (
-                    <PublicRoutes route={route}>
-                      <route.component />
-                    </PublicRoutes>
-                  )
-                }
-              />
-            ))}
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path + "/*"}
+              element={
+                route.protected ? (
+                  <PrivateRoute route={route}>
+                    <route.component />
+                  </PrivateRoute>
+                ) : (
+                  <PublicRoutes route={route}>
+                    <route.component />
+                  </PublicRoutes>
+                )
+              }
+            />
+          ))}
         </Routes>
       </Suspense>
     </Router>

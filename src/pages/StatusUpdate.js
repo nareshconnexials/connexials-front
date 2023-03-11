@@ -1,6 +1,4 @@
 import React from "react";
-import { Label, Input, Select, Textarea } from "@windmill/react-ui";
-import SectionTitle from "../components/Typography/SectionTitle";
 
 const StatusUpdate = () => {
   return (
@@ -43,11 +41,13 @@ const StatusUpdate = () => {
 
                   <div>
                     <h2 className="text-lg font-semibold text-gray-600 dark:text-gray-300">
-                      1) Project Name: <span className="text-base font-normal">UPilot</span>
+                      1) Project Name:{" "}
+                      <span className="text-base font-normal">UPilot</span>
                     </h2>
 
                     <h2 className="ml-5 text-lg font-semibold text-gray-600 dark:text-gray-300">
-                      Client Billing: <span className="text-base font-normal">08:00</span>
+                      Client Billing:{" "}
+                      <span className="text-base font-normal">08:00</span>
                     </h2>
                   </div>
                 </div>
@@ -61,19 +61,25 @@ const StatusUpdate = () => {
 
                   <div>
                     <h2 className="text-lg font-semibold text-gray-600 dark:text-gray-300">
-                      1) Project Name: <span className="text-base font-normal">UPilot</span>
+                      1) Project Name:{" "}
+                      <span className="text-base font-normal">UPilot</span>
                     </h2>
 
                     <h2 className="ml-5 text-lg font-semibold text-gray-600 dark:text-gray-300">
-                      Task: <span className="text-base font-normal">Work on upilot</span>
+                      Task:{" "}
+                      <span className="text-base font-normal">
+                        Work on upilot
+                      </span>
                     </h2>
 
                     <h2 className="ml-5 text-lg font-semibold text-gray-600 dark:text-gray-300">
-                      Working Hour: <span className="text-base font-normal">08:00</span>
+                      Working Hour:{" "}
+                      <span className="text-base font-normal">08:00</span>
                     </h2>
 
                     <h2 className="ml-5 text-lg font-semibold text-gray-600 dark:text-gray-300">
-                      Status: <span className="text-base font-normal">Done</span>
+                      Status:{" "}
+                      <span className="text-base font-normal">Done</span>
                     </h2>
                   </div>
                 </div>
