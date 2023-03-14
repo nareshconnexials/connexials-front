@@ -21,16 +21,19 @@ const Footer = () => {
                 Office
               </p>
               <p className="lg:text-lg text-purpleGray-400">
-                359 Hidden Valley Road, NY
+                8/266, behind UDB Corporate Tower, Malviya Nagar
+              </p>
+              <p className="lg:text-lg text-purpleGray-400">
+                jaipur, Rajasthan 302017
               </p>
             </div>
             <div className="w-full lg:w-1/5 px-3">
               <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-purpleGray-800">
                 Contacts
               </p>
-              <p className="lg:text-lg text-purpleGray-400">(+01) 234 568</p>
+              <p className="lg:text-lg text-purpleGray-400">+91 96800 29092</p>
               <p className="lg:text-lg text-purpleGray-400">
-                contact@monst.com
+                business@deeporion.com
               </p>
             </div>
           </div>

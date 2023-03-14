@@ -48,8 +48,7 @@ const Services = () => {
                   className="mb-6 leading-loose text-purpleGray-400 wow animate__animated animate__fadeIn"
                   data-wow-delay=".1s"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  luctus eget justo et iaculis.
+                 A well-designed website can help you form a good impression on your prospective customers.
                 </p>
 
                 <div className="flex flex-wrap">
@@ -67,8 +66,9 @@ const Services = () => {
                         Web design UX/UI
                       </h3>
                       <p className="text-purpleGray-400 leading-loose text-sm">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Veritatis expedita animi.
+                      {/* Visual design. Visual design focus on digital products that determine how a website looks and feels. */}
+                      A good UI / UX design helps you get better results in the long run. 
+
                       </p>
                     </div>
                   </div>
@@ -86,8 +86,7 @@ const Services = () => {
                         React Development
                       </h3>
                       <p className="text-purpleGray-400 leading-loose text-sm">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Veritatis expedita animi.
+                      building interactive user interfaces and web applications quickly and efficiently with significantly less code.
                       </p>
                     </div>
                   </div>
@@ -105,8 +104,7 @@ const Services = () => {
                         Ecommerce Build
                       </h3>
                       <p className="text-purpleGray-400 leading-loose text-sm">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Veritatis expedita animi.
+                      provides a wider reach and reception across the global market, with minimum investments. 
                       </p>
                     </div>
                   </div>
@@ -124,8 +122,7 @@ const Services = () => {
                         CMS development
                       </h3>
                       <p className="text-purpleGray-400 leading-loose text-sm">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Veritatis expedita animi.
+                      the quickest way to create a web application that is also mobile-friendly. 
                       </p>
                     </div>
                   </div>
@@ -275,10 +272,7 @@ const Services = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <p className="text-purpleGray-400 leading-loose wow animate__animated animate__fadeIn">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                luctus eget justo et iaculis. Quisque vitae nulla malesuada,
-                auctor arcu vitae, luctus nisi. Sed elementum vitae ligula id
-                imperdiet.
+              Your website design is one of the most powerful tools your business has to make a good first impression. But in order to do that, it needs a great web design.
               </p>
             </div>
           </div>
