@@ -383,8 +383,8 @@ const Portfolio = () => {
                 </svg>
                 <div className="leading-relaxed">
                   <span className="text-sm text-purpleGray-400">Phone</span>
-                  <p>+ 48 654-430-309</p>
-                  <p>+ 1 6532-430-309</p>
+                  {/* <p>+ 48 654-430-309</p> */}
+                  <p>+91 96800 29092</p>
                 </div>
               </div>
               <div
@@ -407,8 +407,8 @@ const Portfolio = () => {
                 </svg>
                 <div className="leading-relaxed">
                   <span className="text-sm text-purpleGray-400">E-mail</span>
-                  <p>contact@monst.com</p>
-                  <p>pat@example.com</p>
+                  <p>business@deeporion.com</p>
+                  {/* <p>pat@example.com</p> */}
                 </div>
               </div>
               <div
@@ -437,8 +437,8 @@ const Portfolio = () => {
                 </svg>
                 <div className="leading-relaxed">
                   <span className="text-sm text-purpleGray-400">Address</span>
-                  <p>11567 E Broadview Dr</p>
-                  <p>Colorado(CO), 80117</p>
+                  <p>8/266, behind UDB Coporate Tower, Malviya Nagar </p>
+                  <p>Jaipur(Raj), 302017</p>
                 </div>
               </div>
             </div>

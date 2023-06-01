@@ -16,6 +16,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.3.0",
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.5.0",
@@ -27,6 +28,7 @@
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "faker": "4.1.0",
+    "font-awesome": "^4.7.0",
     "formik": "^2.2.9",
     "html-react-parser": "^3.0.9",
     "jspdf": "^2.5.1",
@@ -37,7 +39,7 @@
     "react-countup": "^6.4.1",
     "react-dom": "^16.13.1",
     "react-focus-lock": "2.4.0",
-    "react-icons": "^4.6.0",
+    "react-icons": "^4.8.0",
     "react-pdf": "^6.2.2",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.6.1",

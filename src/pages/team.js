@@ -223,8 +223,7 @@ const Team = () => {
               className="text-purpleGray-400 leading-loose wow animate__animated animate__fadeIn animated"
               data-wow-delay=".1s"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              luctus eget justo et iaculis.
+            "Coming together is a beginning, staying together is progress, and working together is success."
             </p>
           </div>
           <div className="flex flex-wrap -mx-3">
